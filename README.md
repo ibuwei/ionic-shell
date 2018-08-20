@@ -1,7 +1,7 @@
 # ionic-shell with IONIC-v1
 
 ### 本人自用框架介绍
-* 1. 此框架仅有前端代码
+* 1. 此框架仅有前端代码, 版本信息: Ionic-v1.3.3, AngularJS-v1.5.3
 * 2. 接口端使用的是 `牛酷科技站点` 的B2C单商户版(2.1小程序版), [点击链接](http://www.niushop.com.cn/) 进行了解
 * 声明: 接口端版权为 [牛酷科技](http://www.niushop.com.cn/) 所有
 ### 开发环境下需要按以下步骤准备启动环境:
