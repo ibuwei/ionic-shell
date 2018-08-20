@@ -1,0 +1,65 @@
+<ion-view>
+  <ion-content class='ionCont0' >
+    <div class="myTop">
+     	<div class="myTopInfo clearfix" >
+     		<div class="headerWrap clearfix">
+     			<div class="imgWrap clearfix" ui-sref='myInfo'>
+     				<img class="headerImg" ng-src="{{vm.data.userInfo.user_info.user_headimg || 'common/img/my/defheader.png'}}"/>
+     			</div>
+     			<!--<p class="tmRight ">账户管理 <i class="imgMore"></i></p>-->
+     		</div>
+     		
+     		
+     		<div class="info ">
+     			<p class="top">{{vm.data.userInfo.user_info.nick_name || vm.data.userInfo.member_name}}</p>
+     			<div class="bot clearfix">
+     				<span class="classTxt">{{vm.data.userInfo.level_name}}</span>
+     			</div>
+     		</div>
+     	</div>
+			
+		<div class="tmOrder">
+			<div class="top clearfix" ui-sref='orderList({status:"all"})'>
+				<div class="fl fontRed">普通订单</div>
+				<div class="fr">查看全部订单</div>
+				<i class="imgMore"></i>
+			</div>
+			<ul class="tmOrderList clearfix" >
+				<!--<li class="tmOrderItem" ui-sref='orderList({status:0})'><img src="common/img/my/pay.png"/>待付款({{vm.data.memberIndex.unpaidOrder}})</li>-->
+				<li class="tmOrderItem" ui-sref='orderList({status:1})'><img src="common/img/my/send.png"/>待发货({{vm.data.memberIndex.shipmentPendingOrder }})</li>
+				<li class="tmOrderItem" ui-sref='orderList({status:2})'><img src="common/img/my/recieve.png"/>待收货({{vm.data.memberIndex.goodsNotReceivedOrder}})</li>
+				<li class="tmOrderItem" ui-sref='orderList({status:3})'><img src="common/img/my/received.png"/>已收货({{vm.data.memberIndex.isSign}})</li>
+			</ul>
+		</div>
+
+    </div>
+    
+    <div class="myMod">
+    	<div class="myRow clearfix" ui-sref='myScore'>
+        <img class='myRowL' src="common/img/my/integral.png" />
+        <p class="myRowM">我的积分({{vm.data.userInfo.point}})</p>
+        <i class="imgMore"></i>
+      </div>
+    	
+    	<div class="myRow clearfix" ui-sref='myInfo'>
+        <img class='myRowL' src="common/img/my/personaldata.png" />
+        <p class="myRowM">个人资料</p>
+        <i class="imgMore"></i>
+      </div>
+      
+      <div class="myRow clearfix" ui-sref='addressList'>
+        <img class='myRowL' src="common/img/my/address.png" />
+        <p class="myRowM">收货地址</p>
+        <i class="imgMore"></i>
+      </div>
+      
+      <div class="myRow clearfix"  ui-sref='myCollect'>
+        <img class='myRowL' src="common/img/my/my_collection.png" />
+        <p class="myRowM">我的收藏</p>
+        <i class="imgMore"></i>
+      </div>
+
+    </div>
+   
+  </ion-content>
+</ion-view>

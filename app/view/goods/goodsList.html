@@ -1,0 +1,89 @@
+<ion-view>
+  <ion-header-bar class='myheader' align-title='center'>
+    <a class='back' class='center' ng-click="xgoBack('-1', false, $event);"></a>
+    <div class="myTitle">商品列表</div>
+  </ion-header-bar>
+  <ion-content style='top:85px' on-swipe-right="iosSwipe('-1', false, $event);">
+  	<ion-refresher pulling-text="下拉刷新" on-refresh="vm.doRefresh()"></ion-refresher>
+		<ul class="glList content clearfix">
+			<li class="hgoods fl" ui-sref = 'goodsDetail({id:item.goods_id})' ng-repeat='item in vm.page.data'>
+				<img class="goodsImg" ng-src="{{item.pic_cover_small || 'common/img/index/goods.jpg'}}" alt="" />
+				<!--<p class="desc txtellipsis">
+					<p ng-repeat="(key, value) in item.gorup_list">[{{value.group_name}}]</p>
+					{{item.goods_name}}
+				</p>-->
+				<p class="desc txtellipsis" style="font-size: 13px;">{{item.goods_name}}</p>
+				<div class="hgoodsBot clearfix">
+					<p class="fl money fontRed" style="font-size: 13px;">¥{{item.promotion_price|currency:''}}</p>
+				</div>
+				<div class="hgoodsBot clearfix">
+					<p class="fl fontGray" style="font-size: 12px;">销量:{{item.sales}}</p>
+					<!--<p class="fr shopCar"></p>-->
+				</div>
+			</li>			
+		</ul>
+		<p  class='noData' ng-if='vm.page.noDate'>没有数据</p>
+		<p class="noMoreData" ng-show='!vm.page.hasmore && !vm.page.noDate'>无更多数据</p>
+
+		<ion-infinite-scroll ng-if="vm.page.hasmore" on-infinite="vm.loadMore()"></ion-infinite-scroll>
+  </ion-content>
+  
+  
+  <!-- tab选项卡 -->
+  <ul class="glTabs clearfix">
+		<li class="glTab" ng-click='vm.showGlTabPopFn(1)' ng-class="{'glTabBig':vm.params.brands.length <= 0}">
+		  <p class="glTabCon">分类 <i class="arrowDown"></i></p>
+		</li>
+		<li class="glTab" ng-click='vm.showGlTabPopFn(2)'  ng-class="{'glTabBig':vm.params.brands.length <= 0}">
+		  <p class="glTabCon">排序 <i class="arrowDown"></i></p>
+		</li>
+		<li class="glTab" ng-click='vm.showSortWrapFn()' ng-if='vm.params.brands.length > 0'>		  
+		  <p class="glTabCon">刷选 <i class="arrowDown"></i></p>
+		</li>			
+	</ul>
+		
+  <!-- 排序，筛选条件模态框 -->
+	<div class="glTabPop popWrap" ng-click='vm.closeGlTabPopFn()' ng-show='vm.showGlTabPop'>
+		<!-- 分类 -->
+		<ul class="sortList"  ng-click='$event.stopPropagation()' ng-show='vm.glTabPopId == 1'>
+			<li class="sortItem" ng-class="{'sortItemAct': item.category_id == vm.params.cid}" ng-click='vm.closeGlTabPopFn(item.category_id)' ng-repeat="(key, item) in vm.params.categoryList">{{item.category_name}}</li>
+		</ul>
+		
+		<!-- 排序 -->
+		<ul class="sortList"  ng-click='$event.stopPropagation()' ng-show='vm.glTabPopId == 2'>
+			<li class="sortItem" ng-class="{'sortItemAct': item.id == vm.params.obyzd}" ng-click='vm.sortFn(item.id)' ng-repeat="(key, item) in vm.obyzdList">{{item.name}}</li>
+		</ul>
+	</div>  
+	
+	<!-- 筛选-模态框 -->
+		<div class="sortWrap popWrap" ng-click='vm.closeSortWrapFn()'  ng-show='vm.showSortWrap'>
+			<div class="sortCon" ng-click='$event.stopPropagation()'>
+				<p class="tit">筛选</p>
+				
+				<ul class="sortList" style="height: {{vm.sortListHeight}}px;" >
+  				<li class="sortItem glFilter ">
+						<p class="glFilter-top">品牌</p>
+						<div class="glFilter-Con clearfix">
+							<!--<p class="glFilterItem glFilterItemAct">全部</p>-->
+							<p class="glFilterItem" ng-class="{'glFilterItemAct':x.brand_id == vm.params.brand_id}" ng-repeat="x in vm.params.brands" ng-click='vm.brandClick(x.brand_id)'>{{x.brand_name}}</p>
+						</div>
+					</li>
+					<li class="sortItem glFilter ">
+						<p class="glFilter-top">价格</p>
+						<div class="glFilter-Con clearfix">
+							<!--<p class="glFilterItem glFilterItemAct">全部</p>-->
+							<p class="glFilterItem"  ng-class="{'glFilterItemAct':x.price_str == vm.params.priceStr}" ng-repeat="x in vm.params.prices" ng-click='vm.priceClick(x)'>{{x.price_str}}</p>
+						</div>
+					</li>
+				</ul>
+				<div class="glFilter_btn_wrap clearfix">
+				  <button class="glFilter-btn " ng-click="vm.restting()">重置</button>
+				  <button class="glFilter-btn btnRed" ng-click="vm.sortConfirm()">确认</button>
+				</div>
+				
+			
+			</div>
+		</div>	
+	
+
+</ion-view>	

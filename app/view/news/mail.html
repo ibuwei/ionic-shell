@@ -1,0 +1,14 @@
+<ion-view style='background: #fff;'>
+  <ion-header-bar class='myheader' align-title='center'>
+    <a class='back' class='center' ng-click="xgoBack('-1', false, $event);"></a>
+    <div class="myTitle">物流承诺</div>
+  </ion-header-bar>
+  <ion-content style='padding-top: 20px;' on-swipe-right="iosSwipe('-1', false, $event);">	
+    <div class="ndPage">
+      <!--<p class="" ng-repeat='x in [1,2,3]'>低于成本价，抢到就是赚到，低于成本价，抢到就是赚到，</p>-->
+      <div ng-bind-html='vm.data.help_document_info.data[0].content'> </div>
+    </div>
+  </ion-content>
+</ion-view>
+
+    

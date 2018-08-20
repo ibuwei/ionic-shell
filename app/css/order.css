@@ -1,0 +1,409 @@
+/*
+ * 2018.5.9 zhangyafei
+ * orderList
+ * orderDetail
+ * evaluate
+ * evaluateAgain
+ * express
+ * */
+/* S orderList*/
+.olTabs{
+	position: absolute;
+	top: 44px;
+	width: 100%;
+	border-bottom: 1px solid #e5e5e5;
+	background: #fff;
+}
+.olTab{
+	float: left;
+  width: 25%;
+  text-align: center;
+  padding: 10px 0;
+  line-height: 18px;
+  font-size: 12px;
+}
+.olTabAct{
+	border-bottom: 2px solid #FF6600;
+	color: #FF6600;
+	box-sizing:border-box;
+}
+.olList{
+	width: 100%;
+	height: auto;
+}
+.olItem{
+	width: 100%;
+	height: auto;
+	background: #fff;
+	margin-bottom: 10px;
+}
+.olItem .olItemTop{
+	width: 100%;
+	line-height: 20px;
+	padding: 10px;
+	border-bottom: 1px solid #e5e5e5;
+	font-size: 13px;
+}
+
+.olItem .olGoodsList{
+	width: 100%;
+	padding: 0 4%;
+}
+
+.olItem .olGoodsItem{
+	width: 100%;
+	height: auto;
+	padding: 10px 0;
+	border-bottom: 1px solid #e5e5e5;
+}
+.olItem .olGoodsItem .img{
+	width: 24%;
+	min-height: 20px;
+	margin-right: 2%;
+}
+.olItem .olGoodsItem .img img{
+	width: 100%;
+}
+.olItem .olGoodsItem .info{
+	width: 74%;
+}
+.olItem .olGoodsItem .info .name{
+	font-size: 13px;
+	line-height: 16px;
+	margin-bottom: 3px;
+}
+.olItem .olGoodsItem .info .guige{
+	font-size: 13px;
+}
+.olItem .olItemBot{
+	padding: 10px 4%;
+	line-height: 20px;
+	color: #999;
+}
+.olItem .olItemBot .allmoney span{
+	font-size: 17px;
+}
+.olItem .delWrap{
+	width: 100%;
+	height: auto;
+	padding: 0 4% 10px 4%;
+}
+.olItem .delWrap button{
+  float: right;
+	font-size: 14px;
+  height: 35px;
+  line-height: 35px;
+  width: 80px;
+  border-radius: 4px;
+  margin-left: 10px;
+  color:#fff
+}
+.olNodata{
+  width: 100%;
+  height: auto;
+  padding-top: 20%;
+  text-align:center;
+}
+.olNodata img{
+  width: 70px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+ 
+  
+}
+
+/* E orderList*/
+/* S orderDetail*/
+.odTop{
+	width: 100%;
+	height: auto;
+	background: #51a5ce;
+	padding: 10px 4%;
+	font-size: 13px;
+	color: #fff;
+}
+.odTop .odStaItem{
+	line-height: 20px;
+	margin-bottom: 4px;
+}
+.odsubList{
+	width: 100%;
+	height: auto;
+	background: #fff;
+	border-bottom: 1px solid #e5e5e5;
+	padding: 0 4%;
+	margin-bottom: 10px;
+}
+.odsubItem{
+	padding: 10px 0 10px 20px;
+	font-size: 13px;
+}
+.odsubItemAdd{
+	background: url(../common/img/icon/address.png) no-repeat center left;
+	background-size: 20px;
+}
+.odsubItemWord{
+	border-top: 1px solid #e5e5e5;
+	background: url(../common/img/icon/word.png) no-repeat center left;
+	background-size: 15px;
+}
+.odGoodsWrap{
+	padding: 0 4%;
+	border-top: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
+	background: #fff;
+}
+.odGoods{
+	width: 100%;
+	height: auto;
+	padding: 10px 0;
+	border-bottom: 1px dotted #e5e5e5;
+}
+.odGoods .img{
+	width: 24%;
+	min-height: 20px;
+	margin-right: 2%;
+}
+.odGoods .img img{
+	width: 100%;
+}
+.odGoods .info{
+	width: 74%;
+}
+.odGoods .info .name{
+	font-size: 13px;
+	line-height: 16px;
+	margin-bottom: 3px;
+}
+.odGoods .info .guige{
+	font-size: 13px;
+}
+.odGBList{
+	padding:10px 0;
+}
+.odGBItem{
+	font-size: 13px;
+	line-height: 18px;
+	margin-bottom: 10px;
+}
+.odGBItem .fr{
+	font-family: arial;
+}
+
+/* E orderDetail*/
+
+/* S evaluate*/
+.eGoodsList {
+  background: #FFF;
+}
+.egItem{
+  padding: 10px 4%;
+  border-bottom: 1px solid #eee;
+}
+.egItem .egItemTop{
+  margin-bottom: 10px;
+}
+.egItem .egItemTop .imgWrap{
+  width: 30%;
+  min-height: 50px;
+  padding-right: 10px;
+}
+.egItem .egItemTop .img{
+  width: 100%;
+}
+.egItem .egItemTop .egiLeaveWord{
+  width: 70%;
+}
+.egItem .egItemTop .egiLeaveWord .con{
+  width: 100%;
+  height: 70px;
+  line-height: 20px;
+}
+.egItem .egItemTop .egiLeaveWord .txt{
+  line-height: 20px;
+}
+.egItem .egItemTop .egiLeaveWord .txt1{
+  margin-bottom: 5px;
+}
+.egItem .egItemTop .egiLeaveWord .txt2{
+  color: #999;
+}
+.egItem .egUpImgsWrap{
+  width: 100%;
+  height: auto;
+}
+.egItem .egUpImgsWrap .imgWrap{
+  position: relative;
+  width: 22%;
+  min-height: 40px;
+  margin:0 3% 10px 0;
+}
+.egItem .egUpImgsWrap .imgWrap img{
+  width: 100%;
+}
+.egItem .egUpImgsWrap .imgWrap .close{
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #000000;
+  color: #fff;
+  border-radius: 50%;
+  top:-6px;
+  right: -6px;
+  text-align: center;
+  line-height: 14px;
+  font-size: 14px;
+}
+
+.egUpBtn{
+  width: 22%;
+  text-align: center;
+  height: 50px;
+  border:1px solid #DCDCDC;
+  padding-top: 7px;
+  font-size: 12px;
+}
+.egUpBtn img{
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 3px;
+}
+.eShopScoreWrap{
+  width: 100%;
+  height: auto;
+  background: #fff;
+  padding: 10px 4% 0 4%;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+.eShopScoreWrap .essTop{
+  height:50px;
+  line-height:50px;
+  border-bottom:2px solid #e5e5e5;
+}
+.eShopScoreWrap .essTop img{
+  width: 16px;
+  margin:18px 6px 0 0 ;
+}
+
+.eShopScoreWrap .essBot{
+  height: 30px;
+  line-height: 30px;
+  margin: 20px 0;
+}
+.essStarts{
+  
+}
+.essStart{
+  width: 20px;
+  height: 30px;
+  background: url(../common/img/order/star_red.png) no-repeat center;
+  background-size: 100%;
+  margin-right: 3px;
+}
+.essStartAct{
+  background: url(../common/img/order/star_select.png) no-repeat center;
+  background-size: 100%;
+}
+.eFoot{
+  width: 100%;
+  height: auto;
+  background: #fff;
+  padding: 10px 4%;
+  line-height: 20px;
+  margin-top: 10px;
+}
+.eFoot .eFootFl{
+  margin-top: 5px;
+}
+.eFoot .eFootFl .circle{
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ddd;
+  margin: 2px 3px;
+  padding: 1px;
+}
+.eFoot .eFootFl .circle img{
+  width: 100%;
+}
+.eFoot .mybtn{
+  height: 30px;
+  border:0;
+  color:#fff;
+  padding: 0 5px;
+  font-size:13px;
+  border-radius:3px;
+
+}
+/* E evaluate */
+
+/* S evaluateAgain */
+.eaTxtWrap{
+  width:100%;
+}
+.eaTxtWrap .tit{
+  line-height: 30px;
+}
+.eaTxtWrap textarea{
+  width: 100%;
+  height: 70px;
+}
+/* E evaluateAgain */
+/* S express */
+.eTop{
+  line-height:23px;
+  padding:7px 4%;
+  font-size:12px;
+  color:#666;
+  background: #fff;
+  margin-bottom: 10px;
+}
+.epList{
+  width: 100%;
+  height: auto;
+  background: #fff;
+  padding: 10px 4%;
+}
+.epList .tit{
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+.epitem{
+  position: relative;
+  width: 100%;
+  height: auto;
+  border-left: 1px solid #eee;
+  color: #666;
+  padding:5px  0 0 20px;
+  
+  margin-left: 5px;
+  
+}
+.epitemFir{
+  color: #39C267;
+  padding-top: 0;
+}
+.etime{
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+}
+.epCircle{
+  position: absolute;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#CCCCCC;
+  z-index:5;
+  left:-4px;
+  top:41%;
+}
+.epCircleFir{
+  background:#39C267;
+  top:0;
+  width:12px;
+  height:12px;
+  border:2px solid #A1EEC2;
+  left:-6px;
+}
+/* E express */

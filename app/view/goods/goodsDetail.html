@@ -1,0 +1,128 @@
+<ion-view>
+  <ion-header-bar class='myheader' align-title='center'>
+    <a class='back' class='center' ng-click="xgoBack('-1', false, $event);"></a>
+    <div class="myTitle">商品详情</div>
+  </ion-header-bar>
+  <ion-content on-swipe-right="iosSwipe('-1', false, $event);">
+    <div class="gdTop">
+      <ion-slide-box class='gdSlideBox'>
+        <ion-slide class='gdSlide' ng-repeat='item in vm.data.detail.img_list'>
+          <div class="box">
+            <img ng-src="{{item.pic_cover_mid || '../../common/img/index/goods.jpg'}}" />
+          </div>
+        </ion-slide>
+      </ion-slide-box>
+      <!-- 收藏 -->
+      <div class="gdCollect" ng-click='vm.collectFn()' ng-class="{'gdCollectAct':vm.collect == 'Y'}"></div>
+      <!--积分兑换，限时折扣标签-->
+      <div class="gdExchangeFlag" ng-show="vm.data.detail.point_exchange_type == 1 || vm.data.detail.point_exchange_type == 3 ">积分兑换</div>
+      <div class="gdExchangeFlag" ng-show="vm.data.detail.promotion_type == 2">限时折扣</div>
+    </div>
+    <!-- 限时折扣（模块） -->
+    <div class="gdLimitTModel clearfix" ng-if="vm.data.detail.promotion_type == 2 && vm.data.detail.promotion_detail != ''">
+      <div class="tileft fl">{{vm.data.detail.promotion_price | currency:'¥'}}</div>
+      <div class="times fr">
+        <div class="top">距离结束仅剩</div>
+        <div class="timecon">{{vm.conuntDown}}</div>
+      </div>
+    </div>
+    <div class="gdSubTop">
+      <p class="gdDesc txtellipsis">
+        <span class='goods_tab' ng-repeat="item in vm.data.detail.goods_group_list">{{item.group_name}}</span> {{vm.data.detail.goods_name}}
+      </p>
+      <p class="gdDesc2 txtellipsis fontRed">{{vm.data.detail.introduction}}</p>
+      <p class="gdPrice fontRed">会员价：¥{{vm.data.detail.promotion_price|currency:''}}
+        <span ng-show="vm.data.detail.point_exchange_type == 1">+{{vm.data.detail.point_exchange}}积分</span>
+      </p>
+      <p class="gdNum">销量：{{vm.data.detail.sales}}笔</p>
+    </div>
+    <div class="gdIngoWrap">
+      <ul class="gdTabs clearfix">
+        <li class="gdTab" ng-click='vm.gdTabId = 1' ng-class="{'fontRed':vm.gdTabId == 1}">商品详情</li>
+        <li class="gdTab" ng-click='vm.gdTabId = 2' ng-class="{'fontRed':vm.gdTabId == 2}">商品属性</li>
+        <li class="gdTab" ng-click='vm.gdTabId = 3' ng-class="{'fontRed':vm.gdTabId == 3}">商品评价({{vm.data.detail.evaluates_count.praise_count}})</li>
+      </ul>
+      <div class="gdifBot">
+        <!-- 商品详情 -->
+        <div class="gdifBotCon" ng-show='vm.gdTabId == 1'>
+          <div class="gdbDetail" ng-bind-html='vm.data.detail.description'></div>
+        </div>
+        <!-- 商品属性 -->
+        <div class="gdifBotCon" ng-show='vm.gdTabId == 2'>
+          <p class="gdbAttriItem" ng-repeat="item in vm.data.detail.goods_attribute_list">{{item.attr_value}}: <span>{{item.attr_value_name}}</span></p>
+        </div>
+        <!-- 商品评价 -->
+        <div class="gdifBotCon" ng-show='vm.gdTabId == 3'>
+          <ul class="gdevalueList clearfix">
+            <li class="gdevalueItem txtellipsis" ng-click='vm.switchCommentType(1)' ng-class="{'fontRed':vm.evalueId == 1}">全部({{vm.data.evaluate.praise_count}})</li>
+            <li class="gdevalueItem txtellipsis" ng-click='vm.switchCommentType(5)' ng-class="{'fontRed':vm.evalueId == 5}">图片({{vm.data.evaluate.imgs_count}})</li>
+            <li class="gdevalueItem txtellipsis" ng-click='vm.switchCommentType(2)' ng-class="{'fontRed':vm.evalueId == 2}">好评({{vm.data.evaluate.evaluate_count}})</li>
+            <li class="gdevalueItem txtellipsis" ng-click='vm.switchCommentType(3)' ng-class="{'fontRed':vm.evalueId == 3}">中评({{vm.data.evaluate.center_count}})</li>
+            <li class="gdevalueItem txtellipsis" ng-click='vm.switchCommentType(4)' ng-class="{'fontRed':vm.evalueId == 4}">差评({{vm.data.evaluate.bad_count}})</li>
+          </ul>
+          <div ng-repeat="item in vm.data.comments.data" ng-if="item.is_show==1">
+            <span class="face" style="height: 35px"><img ng-src="{{item.user_img}}" style="width:35px;border-radius: 50%;"/></span>
+            <span>{{item.member_name|setStarString:1}}<span ng-if="item.is_anonymous==1">(匿名)</span></span>
+            <span>{{item.addtime+'000'|date:'yyyy-MM-dd HH:mm:ss'}}</span>
+            <p>{{item.content}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+  <ion-footer-bar class='ionicFootWrap gdFoot clearfix'>
+    <p class="gdFootLitBtn" ui-sref='tab.index'>
+      <img src="common/img/goods/go_home.png" alt="" />
+      <span>首页</span>
+    </p>
+    <a href="tel:13800138000" class="gdFootLitBtn">
+      <img src="common/img/goods/kefux2.png" alt="" />
+      <span>客服</span>
+    </a>
+    <p class="gdFootLitBtn" ui-sref='tab.shopcar'>
+      <img src="common/img/goods/shopcar.png" alt="" />
+      <span>购物车</span></p>
+    <div class="gdFootRight floatL clearfix" ng-show="vm.data.detail.point_exchange_type != 1">
+      <p class="gdFootBigBtn" ng-click='vm.showShopPopFn(1)'>加入购物车</p>
+      <p class="gdFootBigBtn gdFootBigBtn2" ng-click='vm.showShopPopFn(2)'>立即购买</p>
+    </div>
+    <div class="gdFootRight floatL clearfix" ng-show="vm.data.detail.point_exchange_type == 1">
+      <p class="gdFootBigBtn gdFootBigBtn2" style="width: 100%;" ng-click='vm.showShopPopFn(2)'>立即兑换</p>
+    </div>
+  </ion-footer-bar>
+  <!-- 加入购物车，立即购买, 积分兑换pop -->
+  <div class="shopPopWrap" ng-show='vm.showShopPop' ng-click='vm.closeShopPop()'>
+    <div class="shopPop" ng-click='$event.stopPropagation()'>
+      <div class="title clearfix">
+        <div class="imgWrap fl">
+          <img class="" src="common/img/test/goods.jpg" alt="" />
+        </div>
+        <div class="con fl">
+          <p class="top txtellipsis">{{vm.data.detail.goods_name}}</p>
+          <p class="money fontRed">¥{{vm.sku.price}}</p>
+        </div>
+        <p class="close fr" ng-click='vm.closeShopPop()'></p>
+      </div>
+      <!-- 规格属性 -->
+      <ul class="gdSpecWrap">
+        <li class="gdSpecRow" ng-repeat='item in vm.data.detail.spec_list'>
+          <p class="gdSpecRowTit">{{item.spec_name}}</p>
+          <ul class="Con clearfix">
+            <li class="gdSpec" ng-class="{'gdSpecAct':x.active == 'Y'}" ng-click='vm.selectSku(x)' active="x.active" ng-repeat='x in item.value'>{{x.spec_value_name}}</li>
+          </ul>
+        </li>
+      </ul>
+      <!-- 加减器 -->
+      <div class="gdJiaJianWrap clearfix">
+        <div class="desc fl">购买数量：</div>
+        <ul class="gdJiaJian clearfix fl">
+          <li class="fuhao fl" ng-click="vm.goodsAdd(-1)">-</li>
+          <input class="num fl" type="tel" ng-model="vm.params.quantity " ng-keyup='vm.countIptKeyUp()' min="" name="" id="" />
+          <li class="fuhao fl" ng-click="vm.goodsAdd(1)">+</li>
+        </ul>
+      </div>
+      <p class="goodsNum">剩余 {{vm.sku.stock}} 件</p>
+      <button class="gdnextBtn " ng-class="{'btnRed': vm.sku.stock > 0}" ng-click='vm.nextFn()' ng-disabled='vm.sku.stock < 1'>{{vm.shopPopBtnTxt}}</button>
+    </div>
+  </div>
+</ion-view>

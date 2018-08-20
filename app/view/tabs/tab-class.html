@@ -1,0 +1,16 @@
+<ion-view >
+	<ion-header-bar class='myheader' align-title='center'>
+    <!--<a class='back' class='center' ng-click="xgoBack('-1', false, $event);"></a>-->
+    <div class="myTitle">分类</div>
+  </ion-header-bar>
+	
+  <ion-content>
+  	<ul class="tab-class-model-wrap clearfix">
+  		<li class="tab-class-model" ng-class="{'tab-class-model-left':$index%3 == 0}" ui-sref='goodsList({cid:item.category_id})' ng-repeat='item in vm.params.goodsCateList'>
+  			<img class="img" ng-src="{{item.category_pic}}" alt="" />
+  			<p class="txt">{{item.category_name}}</p>
+  		</li>
+  	</ul>	
+    
+  </ion-content>
+</ion-view>

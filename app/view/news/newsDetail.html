@@ -1,0 +1,25 @@
+<ion-view style='background: #fff;'>
+  <ion-header-bar class='myheader' align-title='center'>
+    <a class='back' class='center' ng-click="xgoBack('-1', false, $event);"></a>
+    <div class="myTitle">文章详情</div>
+  </ion-header-bar>
+  <ion-content on-swipe-right="iosSwipe('-1', false, $event);">	
+    <div class="ndPage">
+      <p class="ndtit">{{vm.data.article_detail.title}}</p>
+      <p class="ndsubTit" style="margin-bottom: 0px;">作者：{{vm.data.article_detail.author}}</p>
+      <p class="ndsubTit" style="margin-bottom: 10px;">
+        发布时间：{{vm.data.article_detail.public_time+'000'|date:'yyyy-MM-dd HH:mm:ss'}}
+      </p>
+      
+      <div class="ndCon" ng-bind-html='vm.data.article_detail.content'></div>
+      
+      <div class="otherPage">
+        <p ng-show='vm.data.prev_info.article_id' ui-sref='newsDetail({id: vm.data.prev_info.article_id})'><span>上一篇：</span>{{vm.data.prev_info.title}}</p>
+        <p ng-show='vm.data.next_info.article_id' ui-sref='newsDetail({id: vm.data.next_info.article_id})'><span>下一篇：</span>{{vm.data.next_info.title}}</p>
+      </div>
+      
+    </div>
+  </ion-content>
+</ion-view>
+
+    

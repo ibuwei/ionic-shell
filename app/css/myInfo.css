@@ -1,0 +1,82 @@
+/* myInfo
+ * modifyPsd
+ * myScore
+ * */
+
+.myInfo {
+  position: relative;
+  border-bottom: 1px solid #f0f0f0;
+  height: 48px;
+  line-height: 46px;
+  padding: 0 15px;
+  background: #fff;
+}
+
+.infoLeft {
+  float: left;
+  width: 26%;
+}
+
+.infoRight {
+  float: right;
+  width: 74%;
+  text-align: right;
+}
+
+.myinfoQr {
+  width: 20px;
+  margin-top: 14px;
+}
+
+/* S modifyPsd */
+.mpWrap .myInfo .infoLeft{
+  width: 30%;
+}
+.mpWrap .myInfo .infoRight{
+  width: 70%;
+  text-align: left;
+}
+.mpWrap .myInfo .infoRight .mpIpt{
+  width: 100%;
+  border: none;
+}
+/* E modifyPsd */
+
+/* S myScore */
+.msCon{
+  width: 100%;
+  height: auto;
+  background: #fff;
+}
+.msCon .tit{
+  padding: 10px 4%;
+  line-height: 20px;
+  border-bottom: 1px solid #eee;
+}
+.msList{
+  
+}
+.msList .msItem{
+  padding: 10px 4%;
+  border-bottom: 1px solid #eee;
+}
+.msList .msItem{
+  padding: 10px 4%;
+  border-bottom: 1px solid #eee;
+}
+.msList .msItem .top .fl{
+}
+.msList .msItem .top .fr{
+}
+.msList .msItem .bot{
+  font-size: 12px;
+  color: #999;
+}
+.msList .msItem .bot .fl{
+  width: 53%;
+}
+.msList .msItem .bot .fr{
+}
+/* E myScore */
+
+

@@ -1,0 +1,35 @@
+<ion-view>
+  <ion-header-bar class='myheader' align-title='center'>
+    <a class='back' class='center' ng-click="xgoBack('-1', false, $event);"></a>
+    <div class="myTitle">文章中心</div>
+  </ion-header-bar>
+  <ion-content style='top:85px' on-swipe-right="iosSwipe('-1', false, $event);">
+  	<ion-refresher pulling-text="下拉刷新" on-refresh="vm.refresh()"></ion-refresher>
+		
+		<ul class="nlList content clearfix">
+			<li class="nlItem clearfix" ui-sref = 'newsDetail({id:x.article_id})' ng-repeat='x in vm.page.data'>
+				<div class="nlItemImg fl">
+				  <img ng-src="{{x.image}}" alt="" />
+				</div>
+				<div class="nlItemInfo fl">
+				  <div class="top">{{x.title}}</div>
+				  <p class="middle">{{x.publisher_name}}</p>
+				  <div class="bot clearfix">
+				    <p class="fl name">{{x.name}}</p>
+				    <p class="fl read">{{x.click}}人(阅)</p>
+				  </div>
+				</div>
+			</li>			
+		</ul>
+		<p  class='noData' ng-if='vm.page.noDate'>没有数据</p>
+		<p class="noMoreData" ng-show='!vm.page.hasmore && !vm.page.noDate'>无更多数据</p>
+		<ion-infinite-scroll ng-if="vm.page.hasmore" on-infinite="vm.loadMore()"></ion-infinite-scroll>
+  </ion-content>
+  
+  <!-- tab选项卡 -->
+  <ul class="glTabs nlTabs ">
+    <li class="nlTab " ng-class="{'nlTabAct': vm.tabSeltedId == ''}" ng-click="vm.tabClick('')">全部</li>
+		<li class="nlTab " ng-class="{'nlTabAct': vm.tabSeltedId == x.class_id}" ng-repeat='x in vm.newsClassData' ng-click="vm.tabClick(x.class_id)">{{x.name}}</li>
+	</ul>
+
+</ion-view>	

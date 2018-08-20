@@ -1,0 +1,122 @@
+/*  2018.5.4 zhangyafei
+ * */
+.soAddInfo{
+	position: relative;
+	width: 100%;
+	height: auto;
+	padding: 10px 10px 10px 30px;
+	background: #fff;
+	border-bottom: 1px solid #f0f0f0;
+}
+.soAddInfo .icon{
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	left: 8px;
+	top:50%;
+	margin-top: -9px;
+}
+.soAddInfo .icon img{
+	width: 100%;
+}
+.soAddInfo .top{
+	line-height: 20px;
+	margin-bottom: 3px;
+}
+
+.soAddInfo .bot{
+	font-size: 12px;
+	color: #666;
+}
+.soGoods{
+	width: 100%;
+	height: auto;
+	background: #fff;
+}
+.soGoodRow{
+	width: 100%;
+	height: auto;
+	background: #fafafa;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+.soGoodRow .img{
+	width: 20%;
+	min-height: 20px;
+	margin-right: 2%;
+}
+.soGoodRow .img img{
+	width: 100%;
+	
+}
+.soGoodRow .info{
+	width: 78%;
+	height: auto;
+}
+.soGoodRow .top{
+	margin-bottom: 5px;
+	font-size: 13px;
+}
+.soGoodRow .middle{
+	font-size: 13px;
+	color: #999;
+}
+.soGoodRow .bot{
+	font-size: 13px;
+}
+.soRow{
+	width: 100%;
+	height: auto;
+	padding: 10px 4%;
+	background: #fff;
+	line-height:20px;
+	border-bottom: 1px solid #F0F0F0;
+}
+.soRow .name{
+	width: 24%;
+}
+.soRow .right{
+	width: 76%;
+	text-align: right;
+}
+.soRow .right .ipt{
+	width: 100%;
+	height: 20px;
+	border: 0;
+	text-align: right;
+}
+.soMoneys{
+	padding: 5px 0;
+	background: #fff;
+}
+.soMoneys .top{
+	margin-bottom: 6px;
+	font-size: 16px;
+}
+.soMoneys .soRow{
+	border: none;
+	padding: 2px 4%;
+}
+.soMoneys .soRow .name{
+	width: 50%;
+}
+.soMoneys .soRow .right{
+	width: 50%;
+}
+.sofFl{
+	width: 65%;
+	height: auto;
+	padding:12px 1% ;
+	font-size: 12px;
+	text-align: center;
+	color: #666;
+}
+.sofFl span{
+	font-size: 13px;
+}
+.soNextBtn{
+	width: 35%;
+	line-height: 44px;
+	text-align: center;
+}
+

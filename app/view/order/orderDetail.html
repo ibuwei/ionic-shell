@@ -1,0 +1,57 @@
+<ion-view >
+  <ion-header-bar class='myheader' align-title='center'>
+    <a class='back' class='center' ng-click="xgoBack('-1', false, $event);"></a>
+    <div class="myTitle">订单详情</div>
+  </ion-header-bar>
+  <ion-content on-swipe-right="iosSwipe('-1', false, $event);">
+  	<ul class="odTop">
+  		<li class="odStaItem">{{vm.order.order.status_name}}</li>
+  		<li class="odStaItem">订单号：{{vm.order.order.order_no}}</li>
+  		<li class="odStaItem">下单时间：{{vm.order.order.create_time+'000'|date:'yyyy-MM-dd HH:mm:ss'}}</li>
+  		<li class="odStaItem">支付方式：{{vm.order.order.payment_type_name}}</li>
+  		<li class="odStaItem">付款状态：{{vm.order.order.pay_status_name}}</li>
+  		<li class="odStaItem">配送方式：{{vm.order.order.shipping_type_name}}</li>
+  	</ul>
+  	
+  	<ul class="odsubList">
+  		<li class="odsubItem odsubItemAdd ">收货地址：{{vm.order.order.receiver_name}},{{vm.order.order.receiver_mobile}}, <sapn ng-bind-html='vm.order.order.address'></sapn></li>
+  		<li class="odsubItem odsubItemWord">卖家留言：{{vm.order.order.buyer_message}}</li>
+  	</ul>
+  	
+  	<div class="odGoodsWrap">
+  		<div class="odGoods clearfix" ng-repeat='x in vm.order.order.order_goods_no_delive'>
+  			<div class="img fl">
+					<img ng-src="{{x.picture_info.pic_cover}}"/>
+				</div>
+				<div class="info fl">
+					<div class="name txtellipsis2">{{x.goods_name}}</div>
+					<p class="money fontNum fontRed">¥{{x.price}}</p>
+					<p class="guige clearfix">
+						<span class="fl">规格：{{x.sku_name}}</span>
+						<span class="fr fontNum fontGray">x{{x.num}}</span>
+					</p>
+				</div>
+  		</div>
+  		<ul class="odGBList">
+  			<li class="odGBItem clearfix">
+  				<p class="fl">商品总金额：</p>
+  				<p class="fr">¥{{vm.order.order.goods_money}}</p>
+  			</li>
+  			
+  			<li class="odGBItem clearfix">
+  				<p class="fl">运费：</p>
+  				<p class="fr">¥{{vm.order.order.shipping_money}}</p>
+  			</li>
+  			
+  			<li class="odGBItem clearfix">
+  				<p class="fl">实际支付：</p>
+  				<p class="fr fontRed">¥{{vm.order.order.pay_money}}</p>
+  			</li>
+  		</ul>
+  	</div>
+  	
+  	
+  	
+    
+  </ion-content>
+</ion-view>

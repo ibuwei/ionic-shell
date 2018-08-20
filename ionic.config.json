@@ -1,0 +1,15 @@
+{
+  "name": "ionic-shell",
+  "app_id": "3659f81d",
+  "documentRoot": "app",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://localhost:8065/api.php?s="
+    },
+    {
+      "path": "/public",
+      "proxyUrl": "http://localhost:8065/public"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+<ion-view>
+  <ion-header-bar class='myheader' align-title='center'>
+    <a class='back' class='center' ng-click="xgoBack('-1', false, $event);"></a>
+    <div class="myTitle">我的积分</div>
+  </ion-header-bar>
+  <ion-content on-swipe-right="iosSwipe('-1', false, $event);">
+    <ion-refresher on-refresh="vm.refresh()"></ion-refresher>
+    <div class="myScoreTop">
+      <p class="num">{{vm.data.accountInfo.data[0].point || 0}}</p>
+      <p class="txt">积分</p>
+    </div>
+    
+    <div class="msCon">
+      <p class="tit">积分明细列表:</p>
+      <ul class="msList">
+        <li class="msItem" ng-repeat="x in vm.page.data">
+          <div class="top clearfix">
+            <div class="fl">{{x.type_name}}</div>
+            <div class="fr fontRed">{{x.number}}</div>
+          </div>
+          <div class="bot clearfix">
+            <div class="fl">{{x.text}}</div>
+            <div class="fr">{{x.create_time*1000 | date:'yyyy.MM.dd HH:mm:ss'}}</div>
+          </div>
+        </li>
+      </ul>
+      
+      <p  class='noData' ng-if='vm.page.noDate'>没有数据</p>
+    </div>
+  </ion-content>
+</ion-view>

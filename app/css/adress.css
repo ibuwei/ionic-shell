@@ -1,0 +1,168 @@
+/*  2018.5.2 zhangyafei
+ *  adressList  
+ *  addAddress
+ * */
+
+/* S adressList */
+.noAddress{
+	padding: 10px 0 0 0;
+	margin-bottom: 40px;
+}
+.noAddress .img{
+	margin: 0 auto;
+  display: block;
+  width: 64px;
+  height: 64px;
+}
+.noAddress .txt{
+	font-size: 14px;
+  color: #8f8f8f;
+  margin-top: 10px;
+  text-align: center;
+}
+.alItem{
+	width: 100%;
+	height: auto;
+	background: #FFF;
+	margin-bottom: 10px;
+	border-top: 1px solid #f0f0f0;
+	border-bottom: 1px solid #f0f0f0;
+	padding: 0px 4%;
+}
+.alItem .name{
+	padding-top: 15px;
+	line-height: 20px;
+}	
+.alItem .alAddress{
+	padding: 10px 0;
+	line-height: 20px;
+	border-bottom: 1px solid #f0f0f0;
+}	
+.alItem .bot{
+	padding: 10px 0;
+	line-height: 20px;
+	font-size: 12px;
+}	
+.alDefCircle{
+	width: 16px;
+	height: 16px;
+	margin: 2px 3px 0 0 ;
+	background: url(../common/img/goods/cartp1.png) no-repeat;
+  background-size: 100%;
+	
+	   
+	
+}
+.alDefCircleAct{
+	background: url(../common/img/goods/cartp2.png) no-repeat;
+  background-size: 100%;
+}
+.aldelWrap .aldel{
+	padding: 0 10px;
+}
+/* E adressList */
+
+/* S addAddress */
+.addAddList{
+	background: #fff;
+	margin-bottom: 15px;
+}
+.addItem{
+	position: relative;
+	padding: 10px 4%;
+	border-bottom: 1px solid #e2e2e2;
+}
+.addItem .txt{
+	width: 20%;
+	line-height: 30px;
+	font-size: 13px;
+	text-align: left;
+}
+.addItem .right{
+	width: 80%;
+	
+}
+.addItem .ipt{
+	width: 100%;
+	border: none;
+	padding: 5px 0;
+	line-height: 20px;
+}
+.addItem .sel{
+	text-align: right;
+	line-height: 30px;
+	padding-right: 20px;
+}
+.addItem .txtArea{
+	height: 40px;
+	padding: 5px 0;
+	line-height: 20px;
+}
+
+.addPopWrap{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.7);
+}
+.addPop{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	background: #fff;
+}
+.addPop .tit{
+	position: relative;
+	padding: 10px 1%;
+	line-height: 20px;
+	border-bottom: 1px solid #F0F0F0;
+	text-align: center;
+}
+.addPop .close{
+	font-family: arial;
+	float: right;
+	font-size: 16px;
+	width: 30px;
+	text-align: center;
+	line-height: 20px;
+}
+.addTaps{
+	width: 100%;
+	padding: 0px 4%;
+	border-bottom: 1px solid #F0F0F0;
+}
+.addTap{
+	float: left;
+	width: 25%;
+	padding: 10px 0;
+	line-height: 20px;
+	font-size: 14px;
+	color: #333;
+	text-align: center;
+}
+.addTapAct{
+	color: #CE0000;
+	border-bottom: 1px solid #CE0000;
+}
+.addSelWrap{
+	width: 100%;
+	
+}
+.addSelList{
+	width: 100%;
+	height: 280px;
+	overflow-y:auto ;
+}
+.addSelItem{
+	padding: 10px 4%;
+	line-height: 20px;
+}
+.addSelItemAct{
+	color: #CE0000;
+}
+
+
+
+/* E addAddress */
+

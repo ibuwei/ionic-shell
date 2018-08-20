@@ -1,0 +1,34 @@
+<ion-view >
+  <ion-header-bar class='myheader' align-title='center'>
+    <a class='back' class='center' ng-click="xgoBack('-1', false, $event);"></a>
+    <div class="myTitle">修改密码</div>
+  </ion-header-bar>
+  <ion-content on-swipe-right="iosSwipe('-1', false, $event);">
+    <div class="myInfoWrap mpWrap">
+      <div class="myInfo">
+        <div class="infoLeft">当前密码：</div>
+        <div class="infoRight">
+          <input class="mpIpt" placeholder="原始密码" ng-model='vm.params.old_password' />
+        </div>
+      </div>
+      
+      <div class="myInfo">
+        <div class="infoLeft">新密码：</div>
+        <div class="infoRight">
+          <input class="mpIpt" placeholder="新密码" ng-model='vm.params.new_password'/>
+        </div>
+      </div>
+      
+      <div class="myInfo">
+        <div class="infoLeft">确认新密码：</div>
+        <div class="infoRight">
+          <input class="mpIpt" placeholder="确认新密码" ng-model='vm.params.new_password2'/>
+        </div>
+      </div>
+      
+    </div>
+    
+    <br>
+    <button class="btnBig btnRed nextBtn" ng-click='vm.next()'>保存</button>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,46 @@
+<ion-view>
+	<ion-header-bar class='myheader' align-title='center'>
+    <!--<a class='back' class='center' ng-click="xgoBack('-1', false, $event);"></a>-->
+    <div class="myTitle">购物车</div>
+    <p class="headerRight" ng-if='!vm.showDel' ng-click='vm.showDel = true'>管理</p>
+    <p class="headerRight" ng-if='vm.showDel' ng-click='vm.showDel = false'>完成</p>
+  </ion-header-bar>
+  <ion-content on-swipe-right="iosSwipe('-1', false, $event);">
+  	<div class="shopCarWrap">
+  		
+  		<div class="scRow clearfix " ng-repeat='x in vm.data'>
+    		<div class="scRowSel" ng-class="{'scRowSelAct':x.selected == 'Y'}" ng-click='vm.selectFn(x)'></div>
+    		<div class="scRowL fl">
+    			<img ng-src="{{x.picture_info.pic_cover}}" alt="" />
+    		</div>
+    		<div class="scRowR fl">
+    			<p class="name ">{{x.goods_name}}</p>
+    			<p class="desc txtellipsis">规格:{{x.sku_name}}</p>
+    			<div class="bot clearfix">
+    				<p class="money fl fontRed fontNum">{{x.price | currency:'¥'}}</p>
+    				<div class="jjWrap clearfix fr">
+    					<p class="mark fl fontNum" ng-click='vm. addSbtract(x, -1)'>-</p>
+    					<input class="ipt fl" type="tel" ng-blur='vm.changeNum(x)' ng-model='x.num' />
+    					<p class="mark fl fontNum" ng-click='vm. addSbtract(x, 1)'>+</p>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+  	</div>
+    
+    <div class="sc_noData" ng-if='vm.data.length <= 0'>
+      <img src="common/img/commonImg/cart-big.png" alt="" />
+      <p class="txt">您的购物车还没有商品！</p>
+      <button class="mybtn" ui-sref='tab.index'>去逛逛</button>
+    </div>
+  	
+  </ion-content> 
+	<ion-footer-bar class='ionicFootWrap clearfix tscFoot' ng-if='vm.data.length > 0'>
+	  <div class="scFootSel clearfix">全选
+	    <div class="scRowSel" ng-class="{'scRowSelAct':vm.selectAll == 'Y'}" ng-click='vm.selectAllFn()'></div>
+	  </div>
+	  <div class="scFootMoney fontRed fontNum fl" ng-hide='vm.showDel'>合计：{{vm.allMoney | currency:'¥'}}</div>
+	  <div class="btnRed fr nextBtn" ng-click='vm.cartDel()' ng-show='vm.showDel'>删除</div>
+	  <div class="btnRed fr nextBtn" ng-click='vm.next()' ng-hide='vm.showDel'>结算</div>
+	</ion-footer-bar>
+</ion-view>

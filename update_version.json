@@ -1,0 +1,14 @@
+{
+  "success": "true",
+  "ios": {
+    "newVersion": "0.1.0",
+    "isNecessary": false,
+    "updateInfo": "更新内容： <br>1、功能优化；<br>2、BUG FIXED"
+  },
+  "android": {
+    "newVersion": "0.1.0",
+    "isNecessary": false,
+    "updateInfo": "更新内容： <br>1、功能优化；<br>2、BUG FIXED",
+    "url": "http://oss-cn-hangzhou.aliyuncs.com/app/ionic-shell.apk"
+  }
+}

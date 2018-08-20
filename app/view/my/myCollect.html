@@ -1,0 +1,35 @@
+<ion-view >
+  <ion-header-bar class='myheader' align-title='center'>
+    <a class='back' class='center' ng-click="xgoBack('-1', false, $event);"></a>
+    <div class="myTitle">我的收藏</div>
+  </ion-header-bar>
+	
+	<ul class="mcTabs clearfix">
+		<li class="mcTab" ng-click="vm.switchTab(0)" ng-class="{'mcTabAct':vm.params.type == 0}">全部</li>
+		<li class="mcTab" ng-click="vm.switchTab(1)" ng-class="{'mcTabAct':vm.params.type == 1}">本周</li>
+		<li class="mcTab" ng-click="vm.switchTab(2)" ng-class="{'mcTabAct':vm.params.type == 2}">本月</li>
+		<li class="mcTab" ng-click="vm.switchTab(3)" ng-class="{'mcTabAct':vm.params.type == 3}">本年</li>
+	</ul>
+  
+  <ion-content style='top:85px;' on-swipe-right="iosSwipe('-1', false, $event);">
+    <ion-refresher on-refresh="vm.refresh()"></ion-refresher>
+    
+		<div class="mcItem" ng-repeat='item in vm.page.data'>
+			<p class="time">{{item.fav_time}}</p>
+			<div class="con clearfix">
+				<img ng-src="{{item.goods_image}}" ui-sref="goodsDetail({id:item.goods_id})" alt="" class="img fl" />
+				<div class="fl goods">
+					<div class="name txtellipsis2" ui-sref="goodsDetail({id:item.goods_id})">{{item.goods_name}}</div>
+					<div class="bot clearfix">
+						<p class="money fl fontNum fontRed">¥{{item.price|currency:''}}</p>
+						<p class="cancel fr" ng-click="vm.cancelFav(item, $index)">取消收藏</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<p  class='noData' ng-if='vm.page.noDate'>没有数据</p>
+    <p class="noMoreData" ng-show='!vm.page.hasmore && !vm.page.noDate'>无更多数据</p>
+    <ion-infinite-scroll  ng-if="vm.page.hasmore"  on-infinite="vm.loadMore()"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>

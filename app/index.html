@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title ng-bind="title"></title>
+  <!--插件的css-->
+  <!-- build:css dist_css/styles.css -->
+  <link rel="stylesheet" type="text/css" href="res/js/ionic/css/my.ionic.css" />
+  <link rel="stylesheet" href="res/ALiIcon/iconfont.css" />
+  <!--自定义css-->
+  <link href="css/base-ionic-framework.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/common.css" />
+  <link rel="stylesheet" type="text/css" href="css/tab.css" />
+  <link rel="stylesheet" type="text/css" href="css/my.css" />
+  <link rel="stylesheet" type="text/css" href="css/myInfo.css" />
+  <link rel="stylesheet" type="text/css" href="css/goods.css" />
+  <link rel="stylesheet" type="text/css" href="css/adress.css" />
+  <link rel="stylesheet" type="text/css" href="css/submitOrder.css" />
+  <link rel="stylesheet" type="text/css" href="css/order.css" />
+  <link rel="stylesheet" type="text/css" href="css/login.css" />
+  <link rel="stylesheet" type="text/css" href="css/news.css" />
+  <!-- endbuild -->
+  <!-- build:js dist_js/sd-require.js -->
+  <!--插件的js-->
+  <script src="res/jquery1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="res/js/ionic.bundle.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="res/js/ionic.io.bundle.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="res/js/md5.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="res/js/jsonpath.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="res/lib/angular-local-storage/dist/angular-local-storage.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="res/lib/angular-http-auth/src/http-auth-interceptor.js" type="text/javascript" charset="utf-8"></script>
+  <script src="res/lib/sprintf/dist/sprintf.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="res/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
+  <script src="res/lib/ng-file-upload/ng-file-upload-shim.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="res/lib/ng-file-upload/ng-file-upload.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="res/js/ng-cordova.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="res/ng-file-upload/ng-file-upload-shim.js" type="text/javascript" charset="utf-8"></script>
+  <script src="res/ng-file-upload/ng-file-upload.js" type="text/javascript" charset="utf-8"></script>
+  <script src="res/lib/angular-base64/angular-base64.min.js" type="text/javascript" charset="utf-8"></script>
+  <!-- endbuild -->
+  <!-- build:js dist_js/app.js -->
+  <!--自定义js-->
+  <script src="common/js/app.module.js" type="text/javascript" charset="utf-8"></script>
+  <script src="common/js/configEnv.js" type="text/javascript" charset="utf-8"></script>
+  <script src="common/js/app.config.js" type="text/javascript" charset="utf-8"></script>
+  <script src="common/js/app.routes.js" type="text/javascript" charset="utf-8"></script>
+  <script src="common/js/controllers.js" type="text/javascript" charset="utf-8"></script>
+  <script src="common/js/directives.js" type="text/javascript" charset="utf-8"></script>
+  <script src="common/js/services.js" type="text/javascript" charset="utf-8"></script>
+  <script src="common/js/app.filters.js" type="text/javascript" charset="utf-8"></script>
+  <!--<script src="js/invite/weixin_share.js" type="text/javascript" charset="utf-8"></script>-->
+  <script src="view/user/user.service.js" type="text/javascript" charset="utf-8"></script>
+  <script src="view/message/msg.controller.js" type="text/javascript" charset="utf-8"></script>
+  <script src="view/message/msg.service.js" type="text/javascript" charset="utf-8"></script>
+  <script src="view/tabs/tab.service.js" type="text/javascript" charset="utf-8"></script>
+  <script src="view/tabs/tab.js" type="text/javascript" charset="utf-8"></script>
+  <script src="view/goods/goods.service.js" type="text/javascript" charset="utf-8"></script>
+  <script src="view/goods/goods.js" type="text/javascript" charset="utf-8"></script>
+  <script src="view/my/my.js" type="text/javascript" charset="utf-8"></script>
+  <script src="view/address/address.service.js" type="text/javascript" charset="utf-8"></script>
+  <script src="view/address/address.js" type="text/javascript" charset="utf-8"></script>
+  <script src="view/order/submitOrder.js" type="text/javascript" charset="utf-8"></script>
+  <script src="view/order/order.js" type="text/javascript" charset="utf-8"></script>
+  <script src="view/login/login.js" type="text/javascript" charset="utf-8"></script>
+  <script src="view/order/order.service.js" type="text/javascript" charset="utf-8"></script>
+  <script src="view/news/news.service.js" type="text/javascript" charset="utf-8"></script>
+  <script src="view/news/news.js" type="text/javascript" charset="utf-8"></script>
+  <!--script src="js/templates.js"></script-->
+  <!-- endbuild -->
+  <style>
+  .slider-main {
+    height: 100%;
+  }
+
+  .slider-slide-main {
+    padding-top: 80px;
+    color: #000;
+    background-color: #fff;
+    text-align: center;
+
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+  }
+
+  #logo {
+    margin: 30px 0px;
+  }
+
+  #list {
+    width: 170px;
+    margin: 30px auto;
+    font-size: 20px;
+  }
+
+  #list ol {
+    margin-top: 30px;
+  }
+
+  #list ol li {
+    text-align: left;
+    list-style: decimal;
+    margin: 10px 0px;
+  }
+  </style>
+</head>
+
+<body>
+  <ion-nav-bar class="bar-light" ng-if="navbarshow">
+    <ion-nav-back-button ng-hide="true">
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-nav-view id="app"></ion-nav-view>
+  <div ng-controller="PromptBox"></div>
+  </div>
+  <script id="templates/intro.html" type="text/ng-template">
+    <ion-view view-title="Intro">
+      <ion-nav-buttons side="left">
+        <button class="button button-positive button-clear no-animation" ng-click="startApp()" ng-show="!slideIndex">
+          Skip Intro
+        </button>
+        <button class="button button-positive button-clear no-animation" ng-click="previous()" ng-show="slideIndex > 0">
+          Previous Slide
+        </button>
+      </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+        <button class="button button-positive button-clear no-animation" ng-click="next()" ng-show="slideIndex != 2">
+          Next
+        </button>
+        <button class="button button-positive button-clear no-animation" ng-click="startApp()" ng-show="slideIndex == 2">
+          Start using MyApp
+        </button>
+      </ion-nav-buttons>
+      <ion-slide-box on-slide-changed="slideChanged(index)" class="slider-main">
+        <ion-slide class="slider-slide-main">
+          <h3>Thank you for choosing the Awesome App!</h3>
+          <div id="logo">
+            <img src="https://code.ionicframework.com/assets/img/app_icon.png">
+          </div>
+          <p>
+            We've worked super hard to make you happy.
+          </p>
+          <p>
+            But if you are angry, too bad.
+          </p>
+        </ion-slide>
+        <ion-slide class="slider-slide-main">
+          <h3>Using Awesome</h3>
+          <div id="list">
+            <h5>Just three steps:</h5>
+            <ol>
+              <li>Be awesome</li>
+              <li>Stay awesome</li>
+              <li>There is no step 3</li>
+            </ol>
+          </div>
+        </ion-slide>
+        <ion-slide class="slider-slide-main">
+          <h3>Any questions?</h3>
+          <p>
+            Too bad!
+          </p>
+        </ion-slide>
+      </ion-slide-box>
+    </ion-view>
+  </script>
+  <script id="templates/main.html" type="text/ng-template">
+    <ion-view hide-back-button="true" view-title="Awesome">
+      <ion-content class="padding">
+        <h1>Main app here</h1>
+        <button class="button" ng-click="toIntro()">Do Tutorial Again</button>
+      </ion-content>
+    </ion-view>
+  </script>
+</body>
+
+</html>

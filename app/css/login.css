@@ -1,0 +1,107 @@
+/*
+ * 2018.5.11 zhangyafei 
+ * login
+ * register
+ * 
+ * */
+/* S login */
+.lrTop{
+	position: relative;
+	width: 100%;
+	height: auto;
+	margin-bottom: 15px;
+}
+.lrTop .bg{
+	width: 100%;
+}
+.lrTop .lrGoHome{
+	position: absolute;
+  z-index: 80;
+  width: 34px;
+  height: 25px;
+  line-height: 25px;
+  background: #fff;
+  top: 15px;
+  padding-right: 8px;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+  text-align: center;
+  padding: 2px 0 0 6px;
+}
+.lrTop .lrGoHome img{
+  width: 20px;
+  height: 20px;
+}
+.lrTit{
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.lrTit span{
+	display: inline-block;
+	line-height: 36px;
+	padding: 0 5px;
+	color: #FF4E05;
+	border-bottom:1px solid #FF4E05 ;
+}
+.lrSubWrap{
+	width: 80%;
+	height: auto;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+.lsList{
+	width: 100%;
+	height: auto;
+}
+.lsItem{
+	width: 100%;
+	height: auto;
+	border-bottom: 1px solid #e9ecee ;
+}
+.lsItem{
+	width: 100%;
+	height: auto;
+	border-bottom: 1px solid #e9ecee ;
+}
+.lsItem .lricon{
+	width: 30px;
+	margin-top: 6px;
+	margin-right: 3px;
+}
+.lsItem .lrIpt{
+	width: 80%;
+	height: 45px;
+	padding: 5px 0;
+	border: none;
+}
+.lrbtns{
+	padding-top:20px;
+}
+.lrbtns .ltBtn{
+	width: 100%;
+	border-radius: 40px;
+	margin-bottom:15px ;
+}
+/* E login */
+
+/* S register */
+.registerList .name{
+	width: 26%;
+	padding: 10px 0;
+	line-height: 25px;
+}
+.registerList .lrIpt{
+	width: 74%;
+}
+.rToLogin{
+	width: 100%;
+	height: auto;
+	line-break: 24px;
+	color: #999;
+	font-size: 13px;
+	text-align: center;
+}
+/* E register */
+

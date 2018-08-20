@@ -1,0 +1,31 @@
+<ion-view>
+  <ion-header-bar class='myheader' align-title='center'>
+    <a class='back' class='center' ng-click="xgoBack('-1', false, $event);"></a>
+    <div class="myTitle">商品搜索结果</div>
+  </ion-header-bar>
+  <ion-content style='top:84px' on-swipe-right="iosSwipe('-1', false, $event);">	
+    <ion-refresher on-refresh="vm.refresh()"></ion-refresher>
+		<ul class="glList content clearfix">
+			<li class="hgoods fl" ui-sref="goodsDetail({id:item.goods_id})" ng-repeat='item in vm.page.data'>
+				<img class="goodsImg" src="{{item.pic_cover_small||'common/img/index/goods.jpg'}}" alt="" />
+				<p class="desc txtellipsis">{{item.goods_name}}</p>
+				<div class="hgoodsBot clearfix">
+					<p class="fl money">¥{{item.promotion_price}}</p>
+					<!--<p class="fr shopCar" ng-click="vm.addCart($event, item)"></p>-->
+				</div>
+			</li>			
+		</ul>
+		
+		<p class='noData' ng-if='vm.page.noDate'>没有数据</p>
+		<ion-infinite-scroll  ng-if="vm.page.hasmore"  on-infinite="vm.loadMore()"></ion-infinite-scroll>
+  </ion-content>
+  
+  <!-- tab选项卡 -->
+  <ul class="glTabs clearfix" style="overflow: hidden;">
+		<li class="glTab" ng-class="{'fontYellow': vm.params.obyzd == ''}" ng-click='vm.tabClick("")'>默认</li>
+		<li class="glTab" ng-class="{'fontYellow': vm.params.obyzd == 'ng.sales'}" ng-click='vm.tabClick("ng.sales")'>销量 <span class='sort' ng-class="{'sortAct': vm.params.obyzd == 'ng.sales'}"></span></li>
+		<li class="glTab" ng-class="{'fontYellow': vm.params.obyzd == 'ng.promotion_price'}" ng-click='vm.tabClick("ng.promotion_price")'>价格<span class='sort' ng-class="{'sortAct': vm.params.obyzd == 'ng.promotion_price'}"></span></li>			
+	</ul>
+		
+
+</ion-view>	

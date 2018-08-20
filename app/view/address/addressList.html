@@ -1,0 +1,33 @@
+<ion-view >
+  <ion-header-bar class='myheader' align-title='center'>
+    <a class='back' class='center' ng-click="xgoBack('-1', false, $event);"></a>
+    <div class="myTitle">我的收货地址</div>
+  </ion-header-bar>
+  <ion-content on-swipe-right="iosSwipe('-1', false, $event);">
+  	<div class="noAddress" ng-if='vm.data.length <= 0'>
+  		<img class="img" src="common/img/icon/member_none_address.png" alt="" />
+  		<p class="txt">你还没有添加收货地址，添加一个吧!</p>
+  	</div>
+  	
+  	<div class="alItem" ng-repeat='x in vm.data'  >
+  	  <div class="alItemTop" ng-click="vm.myfrom =='submitOrder' ? vm.defAdd(x.id) : '' "> 
+  	    <div class="name">{{x.consigner}}</div>
+        <div class="alAddress" ><span ng-bind-html = 'x.address_info'></span> {{x.address}}</div>
+  	  </div>
+  		
+  		<div class="bot clearfix">
+  			<div class="alDefaultWrap fl clearfix" ng-click='vm.defAdd(x.id)'>
+  				<p class="alDefCircle fl " ng-class="{'alDefCircleAct':x.is_default == 1}"></p>
+  				<p class="txt fl">默认地址</p>
+  			</div>
+  			<div class="aldelWrap fr clearfix">
+  				<div class="aldel fl"  ui-sref="addAddress({id:x.id, address_info:x.address_info, from:vm.myfrom})">编辑</div>
+  				<div class="aldel fl" ng-click='vm.delAdd(x, $index)'>删除</div>
+  			</div>
+  		</div>
+  	</div>
+  	
+  	<button class="btnBig btnRed" ui-sref="addAddress({from:vm.myfrom})" >新增收货地址</button>
+  	<p class="" style=" width:100%;height: 1px;margin-top:15px;"></p>
+  </ion-content>
+</ion-view>

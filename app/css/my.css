@@ -1,0 +1,99 @@
+/*	2018.5.4 zhangyafei
+ * myScore
+ * myCollect
+ * 
+ * */
+
+
+/* S myScore */
+
+.myScoreTop {
+	border-top: 1px solid #f77c52;
+	background: -webkit-linear-gradient(#FE4445, #FF8458);
+	background: -o-linear-gradient(#FE4445, #FF8458);
+	background: -moz-linear-gradient(#FE4445, #FF8458);
+	background: linear-gradient(#FE4445, #FF8458);
+	padding: 15px 0;
+	text-align: center;
+}
+
+.myScoreTop .num {
+	line-height: 62px;
+	font-size: 42px;
+	color: #fff;
+}
+
+.myScoreTop .txt {
+	font-size: 15px;
+	color: #fff;
+}
+
+
+/* E myScore */
+
+
+/* S myCollect */
+
+.mcTabs {
+	position: fixed;
+	width: 100%;
+	height: auto;
+	left: 0;
+	top: 44px;
+	background: #fff;
+	border-bottom: 1px solid #f0f0f0;
+	line-height: 20px;
+}
+
+.mcTab {
+	float: left;
+	width: 24%;
+	height: 40px;
+	padding: 10px 0;
+	line-height: 20px;
+	text-align: center;
+}
+
+.mcTabAct {
+	color: #ce0000;
+	border-bottom: 2px solid #ce0000;
+}
+
+.mcItem {
+	width: 100%;
+	height: auto;
+	background: #fff;
+	border-bottom: 1px solid #f0f0f0;
+	padding: 10px 4%;
+}
+
+.mcItem .time {
+	width: 100%;
+	height: auto;
+	line-height: 20px;
+	/*border-bottom: 1px solid #f0f0f0;*/
+	/*padding-bottom: 10px;*/
+}
+
+.mcItem .con {
+	width: 100%;
+	height: auto;
+	padding-top: 10px;
+}
+
+.mcItem .con .img {
+	width: 28%;
+	height: 80px;
+	margin-right: 2%;
+}
+
+.mcItem .con .goods {
+	width: 70%;
+}
+
+.mcItem .con .name {
+	margin-bottom: 10px;
+}
+
+
+/* E myCollect */

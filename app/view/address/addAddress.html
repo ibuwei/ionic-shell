@@ -1,0 +1,70 @@
+<ion-view >
+  <ion-header-bar class='myheader' align-title='center'>
+    <a class='back' class='center' ng-click="xgoBack('-1', false, $event);"></a>
+    <div class="myTitle">{{vm.title}}</div>
+  </ion-header-bar>
+  <ion-content on-swipe-right="iosSwipe('-1', false, $event);">
+  	<ul class="addAddList">
+  		<li class="addItem clearfix">
+  			<p class="fl txt">姓名：</p>
+  			<div class="fl right">
+  				<input class="ipt" type="" ng-model='vm.addInfo.userName' placeholder="收件人姓名"/>	
+  			</div>
+  		</li>
+  		
+  		<li class="addItem clearfix">
+  			<p class="fl txt">手机号：</p>
+  			<div class="fl right">
+  				<input class="ipt" type="tel" maxlength="11" ng-model='vm.addInfo.phone' placeholder="手机号"/>	
+  			</div>
+  		</li>
+  		
+  		<li class="addItem clearfix">
+  			<p class="fl txt">所在地区:</p>
+  			<p class="fl right sel txtellipsis" ng-click='vm.showAddPopFn()'>
+  			  <span ng-if='vm.addInfo.areaId == "" '>请选择</span>
+  			  <span ng-if='vm.addInfo.areaId != "" '>{{vm.addInfo.proName}},{{vm.addInfo.cityName}},{{vm.addInfo.areaName}}</span>
+  			  <i class="imgMore"></i></p>
+  		</li>
+  		
+  		<li class="addItem clearfix">
+  			<p class="fl txt">所在地区:</p>
+  			<div class="fl right">
+  				<input class="ipt" type="" ng-model='vm.addInfo.detailAdd' placeholder="详细地址"/>	
+  			</div>
+  		</li>  		
+  	</ul>
+  	
+  	<button class="btnBig btnRed" ng-click='vm.next()'>保存</button>  	
+  </ion-content>
+  
+  <!-- 选择省市区模态框 -->
+  <div class="addPopWrap" ng-click="vm.closeAddPop()" ng-show='vm.showAddPop'>
+  	<div class="addPop"  ng-click="$event.stopPropagation()">
+  		<div class="tit"> 所选地区
+  			<p class="close"  ng-click="vm.closeAddPop()">x</p>
+  		</div>
+  		<ul class="addTaps clearfix">
+	  		<li class="addTap txtellipsis" ng-click='vm.addTapFn(1)' ng-class="{'addTapAct': vm.addTap == 1}" >{{vm.addInfo.proName}}</li>
+	  		<li class="addTap txtellipsis" ng-click='vm.addTapFn(2)' ng-class="{'addTapAct': vm.addTap == 2}" ng-show='vm.addInfo.showCityTab'>{{vm.addInfo.cityName}}</li>
+	  		<li class="addTap txtellipsis" ng-click='vm.addTapFn(3)' ng-class="{'addTapAct': vm.addTap == 3}" ng-show='vm.addInfo.showAreaTab'>{{vm.addInfo.areaName}}</li>
+	  	</ul>
+	  	
+	  	<div class="addSelWrap ">
+	  		<ul class="addSelList" ng-show='vm.addTap == 1'>
+	  			<li class="addSelItem"  ng-click='vm.proClick(x)' ng-repeat='x in vm.addInfo.pros' ng-class="{'addSelItemAct':x.selected}">{{x.province_name}}</li>
+	  		</ul>
+	  		
+	  		<ul class="addSelList" ng-show='vm.addTap == 2'>
+	  			<li class="addSelItem" ng-click='vm.cityClick(x)' ng-repeat='x in vm.addInfo.citys' ng-class="{'addSelItemAct':x.selected}">{{x.city_name}}</li>
+	  		</ul>
+	  		
+	  		<ul class="addSelList" ng-show='vm.addTap == 3'>
+	  			<li class="addSelItem" ng-click='vm.areaClick(x)' ng-repeat='x in vm.addInfo.areas'  ng-class="{'addSelItemAct':x.selected}">{{x.district_name}}</li>
+	  		</ul>
+	  	</div>
+  	</div>
+  	
+  </div>
+  
+</ion-view>

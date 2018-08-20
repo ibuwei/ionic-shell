@@ -1,0 +1,539 @@
+/* 
+ * zhangyafei 2018.4.26
+ * goodsList
+ * goodsDetail
+ * discount
+ * searchResult
+ * 
+ *  */
+
+
+/* goodsList */
+.glTabs {
+	position: fixed;
+	width: 100%;
+	overflow: hidden;
+	height: 40px;
+	background: #fff;
+	border-bottom: 1px solid #eee;
+	left: 0;
+	top: 44px;
+}
+
+.glTab {
+	float: left;
+	width: 33%;
+	margin-top: 10px;
+	line-height: 20px;
+	text-align: center;
+	border-right: 1px solid #eee;
+}
+.glTabCon{
+  position: relative;
+  width: 50px;
+  margin: 0 auto;
+  /*background: yellow;*/
+  text-align: left;
+}
+.arrowDown{
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  margin-top: -7px;
+  right: 0;
+  background: url(../common/img/commonImg/arrowDown.png) no-repeat center;
+  background-size: 100%;
+}
+.glTabBig{
+  width: 50%;
+}
+
+.glTab:nth-last-child(1) {
+	border: none;
+}
+
+.glTabPop {
+	top: 84px;
+}
+
+.sortWrap{
+	padding-left: 15%;
+	z-index: 1000000;
+}
+.sortCon{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	padding-bottom: 40px;
+}
+.sortCon .tit{
+  width: 100%;
+  line-height: 30px;
+  padding: 5px 0;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: center;
+}
+.sortList {
+	background: #fff;
+	padding: 0 4%;
+	overflow-y: auto;
+}
+
+.sortItem {
+	padding: 10px 0;
+	line-height: 20px;
+	border-bottom: 1px solid #eee;
+}
+.sortItemAct {
+  color:red;
+  /*#f23030*/
+}
+.glFilter-top {
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	color: #555;
+}
+
+.glFilterItem {
+	float: left;
+	height: 28px;
+	line-height: 26px;
+	text-align: center;
+	padding: 0 1.5%;
+	background: #eee;
+	color: #555;
+	margin: 5px 2% 5px 0px;
+	border-radius: 3px;
+	border: 1px solid #eee;
+	position: relative;
+	font-size: 13px;
+}
+
+.glFilterItemAct {
+	background: #CE0000;
+	color: #fff;
+}
+.glFilter_btn_wrap{
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  background: #ce0000;
+  color: #FFFDEF;
+  left: 0;
+  bottom: 0;
+}
+.glFilter-btn {
+	float: left;
+	width: 50%;
+	height: 40px;
+}
+.glList{
+	padding:10px 0 0 2%;
+}
+
+/* goodsDetail */
+
+.gdTop {
+	position: relative;
+	width: 100%;
+	height: auto;
+}
+
+.gdSlideBox {
+	width: 100%;
+	min-height: 100px;
+}
+
+.gdSlide {
+	width: 100%;
+	min-height: 100px;
+}
+
+.gdSlide img {
+	width: 100%;
+}
+
+.gdCollect {
+	position: absolute;
+	width: 35px;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+	background: rgba(0, 0, 0, 0.6) url(../common/img/goods/collect.png) no-repeat center;
+	background-size: 22px;
+	border-radius: 50%;
+	z-index: 20;
+	right: 10px;
+	top: 10px;
+}
+.gdExchangeFlag{
+  position: absolute;
+  background-color:#ff4343;
+  left:0;
+  bottom: 0;
+  font-size:12px;
+  padding:4px 8px;
+  border-radius:0 4px 0 0;
+  color:#fff;
+
+}
+
+.gdCollectAct {
+	background: rgba(0, 0, 0, 0.6) url(../common/img/goods/collectAct.png) no-repeat center;
+	background-size: 22px;
+}
+
+.gdSubTop {
+	padding: 12px 10px 0 10px;
+	border-bottom: 1px solid #eee;
+	background: #fff;
+	margin-bottom: 13px;
+}
+
+.gdDesc {
+	font-weight: normal;
+	margin: 0;
+	font-size: 14px;
+	line-height: 22px;
+	text-align: left;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	color: #333;
+}
+
+.gdDesc .goods_tab{
+  background:#f44;
+  color:#fff;
+  font-size:12px;
+  padding:1px 4px;
+  margin-right:3px;
+}
+
+.gdDesc2 {
+	font-size: 12px;
+	color: #F44336;
+	margin: 3px 0;
+}
+
+.gdPrice {
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px solid #eee;
+}
+
+.gdNum {
+	color: #999;
+	font-size: 12px;
+	height: 30px;
+	line-height: 30px;
+}
+
+.gdIngoWrap {
+	width: 100%;
+	height: auto;
+	background: #fff;
+	border-top: 1px solid #f0f0f0;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.gdTabs {
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.gdTab {
+	float: left;
+	width: 33.3%;
+	white-space: nowrap;
+	overflow: hidden;
+	height: 40px;
+	line-height: 40px;
+	border-left: 1px solid #f0f0f0;
+	font-size: 14px;
+	color: #333;
+	text-align: center;
+}
+
+.gdifBot {
+	width: 100%;
+	min-height: 60px;
+	background: #fff;
+	/*padding: 10px;	*/
+}
+.gdifBot img {
+  width: 100%;
+}
+.gdbAttriItem{
+  color:#333;
+  line-height:30px;
+  font-size:14px;
+}
+.gdbAttriItem span{
+  color:#666;
+}
+.gdevalueList {
+	width: 100%;
+	height: 40px;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.gdevalueItem {
+	float: left;
+	width: 20%;
+	line-height: 40px;
+	text-align: center;
+	font-size: 12px;
+}
+
+.gdFoot {
+	border-top: 1px solid #eee;
+	height: 50px;
+}
+
+.gdFootLitBtn {
+	position: relative;
+	float: left;
+	width: 15%;
+	height: 50px;
+	text-align: center;
+	padding-top: 4px;
+}
+
+.gdFootLitBtn img {
+	width: 16px;
+	/*height: 20px;*/
+	margin: 0 auto;
+	/*background: yellow;*/
+}
+
+.gdFootLitBtn span {
+	position: absolute;
+	line-height: normal;
+	left: 0;
+	bottom: 5px;
+	width: 100%;
+	color: #666;
+	font-size: 10px;
+}
+
+.gdFootRight {
+	width: 55%;
+}
+
+.gdFootBigBtn {
+	float: left;
+	width: 50%;
+	background: #f85;
+	color: #fff;
+	font-size: 13px;
+	text-align: center;
+	line-height: 50px;
+}
+
+.gdFootBigBtn2 {
+	background: #f44;
+}
+
+.shopPopWrap {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .7);
+	z-index: 100;
+}
+
+.shopPop {
+	position: absolute;
+	width: 100%;
+	max-height: 80%;
+	background: #fff;
+	left: 0;
+	bottom: 0;
+}
+
+.shopPop .title {
+	padding: 10px 10px;
+}
+
+.shopPop .title .imgWrap {
+	width: 23%;
+	display: block;
+	overflow: hidden
+}
+
+.shopPop .title .imgWrap img {
+	width: 60%;
+}
+
+.shopPop .con {
+	width: 60%;
+	font-size: 14px;
+	overflow: hidden;
+}
+
+.shopPop .con {
+	width: 60%;
+	font-size: 14px;
+	overflow: hidden;
+}
+
+.shopPop .close {
+	height: 22px;
+	width: 22px;
+	overflow: hidden;
+	background: url(../common/img/commonImg/close.png);
+	background-size: 22px 22px;
+}
+
+.gdSpecWrap {
+	max-height: 260px;
+	overflow-y: auto;
+	padding: 10px;
+	border-top: 1px solid #f0f0f0;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.gdSpecRowTit {
+	font-size: 14px;
+	line-height: 16px;
+	margin-bottom: 7px;
+	color: #555;
+}
+
+.gdSpecRow .Con {
+	width: 100%;
+	height: auto;
+}
+
+.gdSpec {
+	float: left;
+	padding: 5px 8px;
+	line-height: 20px;
+	margin: 0 10px 10px 0;
+	color: #333;
+	font-size: 12px;
+	text-align: center;
+	border-radius: 4px;
+	background: #eee;
+}
+
+.gdSpecAct {
+	background: #e30214;
+	color: #fff;
+}
+
+.gdJiaJianWrap {
+	padding: 10px 10px 5px 10px;
+	font-size: 12px;
+	color: #999;
+	background-color: #FFFFFF;
+}
+
+.gdJiaJianWrap .desc{
+line-height: 36px;
+}
+.gdJiaJian{
+	width: auto;
+	height: 36px;
+	border: 1px solid #e4e4e4;
+}
+.gdJiaJian .fuhao{
+	width: 34px;
+	height: 34px;
+    line-height: 34px;
+    
+    margin: 0;
+    background: #fff;
+    text-align: center;
+    color: #666;
+    font-size: 18px;
+    font-weight: 400;
+}
+.gdJiaJian .num{
+    text-align: center;
+    height: 34px;
+    line-height: 34px;
+    max-width: 54px;
+    padding: 0 5px;
+    margin: 0;
+    border-left: 1px solid #e4e4e4;
+    border-right: 1px solid #e4e4e4;
+    background: #fff;
+    color: #000;
+    font-size: 15px;
+    height: 34px;
+}
+.goodsNum{
+	padding: 0 10px;
+    color: #333;
+    padding-bottom: 6px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.gdnextBtn{
+	width: 100%;
+	height: 40px;
+	font-size: 14px;
+	color: #fff;
+}
+.gdLimitTModel{
+  width:100%;
+  height: atuo;
+  padding: 10px ;
+  background: #ff4343;
+  color: #fff;
+}
+.gdLimitTModel .tileft{
+  width: 46%;
+  font-size: 30px;
+  color:  #fff;
+  line-height: 40px;
+  
+}
+.gdLimitTModel .times{
+  width: 46%;
+}
+.gdLimitTModel .times .top{
+  font-size: 12px;
+}
+/* S discount */
+.goodsImgWrap{
+  position: relative;
+}
+.dcTimer{
+  position:absolute; 
+  width:100%;
+  height:35px;
+  line-height:35px;
+  color:#fff;
+  margin-top:12px;
+  font-size:12px;
+  left:0px;
+  bottom:0px;
+  background:rgba(0, 0, 0, .4) url(../common/img/goods/icon_timer.png) no-repeat 3px center;
+  background-size: 23px 23px;
+  text-align:left;
+  padding-left: 28px;
+}
+/* E discount */
+
+/* S searchResult */
+.sort{
+  position: absolute;
+  width: 14px;
+  height: 20px;
+  background: url(../common/img/commonImg/sort.png) no-repeat center;
+  background-size: 100%;
+}
+.sortAct{
+  background: url(../common/img/commonImg/sortAct.png) no-repeat center;
+  background-size: 100%;  
+}
+
+
+/* E searchResult */

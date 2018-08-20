@@ -1,0 +1,106 @@
+/*
+ * zhangyafei 2018.5.18
+ * newsList
+ * newsDetail
+ * */
+
+/* S newsList */
+.glTabs{
+  white-space:nowrap;
+  overflow-x: scroll
+}
+.nlTab{
+  display: inline-block;
+  width: auto;
+  height: auto;
+  padding: 5px 8px;
+  line-height: 27px;
+  text-align:center;
+}
+.nlTabAct{
+  color:#FF834C;
+  border-bottom:2px solid #FF834C;
+}
+.nlList{
+  width: 100%;
+  height: auto;
+  background: #FFF;
+  padding: 0 4%;
+}
+.nlItem{
+  padding: 10px  0;
+}
+.nlItemImg{
+  width: 24%;
+  min-height: 30px;
+  padding-right: 10px;
+}
+
+.nlItemImg img{
+  width: 100%;
+}
+.nlItemInfo{
+  width: 70%;
+}
+.nlItemInfo  .top{
+  font-size: 15px;
+  color:#191919;
+}
+.nlItemInfo  .middle{
+  font-size: 13px;
+  color:#666;
+  margin-bottom: 6px;
+}
+.nlItemInfo .bot .name{
+  color:#999;
+  padding:0px 8px;
+  border-radius:10px;
+  border:1px solid #999;
+  font-size:12px;
+  line-height: 18px;
+  box-sizing: border-box;
+}
+.nlItemInfo .bot .read{
+  line-height:20px;
+  color:#999;
+  font-size:12px;
+  margin-left:5px;
+
+}
+
+/* E newsList */
+
+/* S newsDetail */
+.ndPage{
+  width: 100%;
+  padding: 0 4%;
+}
+.ndPage p{
+  margin-bottom: 10px;
+}
+.ndtit{
+  line-height:20px;
+  text-align:center;
+  font-size:16px;
+  padding:15px 0;
+  font-weight: 600;
+}
+.ndsubTit{
+  line-height: 20px;
+  font-size: 14px;
+  color: #999;
+}
+.otherPage{
+  margin-top: 30px;
+}
+.otherPage p{
+  margin-bottom: 6px;
+  color: #666;
+}
+.ndCon{
+  color: #666;
+}
+.ndCon img{
+  width: 100%;
+}
+/* E newsDetail */

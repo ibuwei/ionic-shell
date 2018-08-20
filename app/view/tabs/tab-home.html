@@ -1,0 +1,128 @@
+<ion-view>
+  <ion-content>
+    <!--搜索-->
+    <div class="home-search-wrap clearfix">
+      <p class="img fl"></p>
+      <!--<img class="img fl" src="common/img/icon/menu/my.png" alt="" />-->
+      <div class="home-search-content fl">
+        <input class="hsearch-ipt" type="" ng-model="vm.params.keywords" placeholder="搜索商品" />
+        <p class="hsearch-btn" ng-click='vm.search()'></p>
+      </div>
+    </div>
+    
+    <ion-slide-box class='homeTop' on-slide-changed="slideHasChanged($index)">
+      <ion-slide  ng-repeat="item in vm.data.advList.adv_index.adv_list">
+        <div class="box blue">
+          <img ng-src="{{item.adv_image | imgFullPath}}" />
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+    
+    <div class="homeSubTop">
+      <ul class="homeTabs clearfix">
+        <li class="homeTab" ui-sref='goodsDetail({id: vm.data.fullGive[0].goods_id})' style='width: {{vm.data.subImgW}};'>
+          <img src="common/img/index/isub1.jpg" alt="" />
+        </li>
+        
+        <li class="homeTab" ui-sref='mail' style='width: {{vm.data.subImgW}};'>
+          <img src="common/img/index/isub2.jpg" alt="" />
+        </li>
+        
+        <li class="homeTab" ui-sref='newsList' style='width: {{vm.data.subImgW}};' >
+          <img src="common/img/index/isub3.jpg" alt="" />
+        </li>
+        
+      </ul>
+    </div>
+    <!-- 限时专享 -->
+    <div class="thlimitTime clearfix" style="min-height: 130px;"  ng-if='vm.data.discountList.data.length > 0 && vm.data.discountList.currentTime/1000  >= vm.data.discountList.data[0].start_time  && vm.data.discountList.currentTime/1000  <= vm.data.discountList.data[0].end_time'>
+      <div class="left" ui-sref='discount'>
+        <p class="top fontYellow">
+          <img src="common/img/index/time.png" alt="" />限时专享
+        </p>
+        <p class="mid">距离本场结束</p>
+        <p class="bot fontNum">{{vm.data.discountList.timer}}</p>
+      </div>
+      <div class="thltSlide fr" >
+        <ion-slide-box class='thltSlideList'>
+          <ion-slide calss='thltSlideItem' ng-repeat='item in vm.data.discountList.data' ui-sref='goodsDetail({id:item.goods_id})'>
+            <div class="imgWrap">
+              <img class="img" ng-src="{{item.picture.pic_cover_small|imgFullPath}}" alt="" />
+              <!--<p class="shopcar"></p>-->
+            </div>
+            <p class="des txtellipsis" style="padding: 0 15px">{{item.goods_name}}</p>
+            <div class="bot clearfix" style="padding:0 15px 20px 15px">
+              <p class="fl fontNum fontRed money">¥{{item.promotion_price|currency:''}}</p>
+              <p class="fl fontNum oldPrice">{{item.price|currency:''}}</p>
+              <p class="fl num">剩余{{item.stock}}件</p>
+            </div>
+          </ion-slide>
+        </ion-slide-box>
+      </div>
+    </div>
+    <!-- 满减优惠 -->
+    <div class="home-model" ng-if=" vm.data.fullGive.length > 0">
+      <div class="tile clearfix">
+        <p class="fl name">满减优惠</p>
+      </div>
+      <ul class="thFullList" >
+        <li class="thFItem clearfix" ng-repeat='x in vm.data.fullGive' ui-sref='goodsDetail({id: x.goods_id})' ng-if='$index < 5'>
+          <div class="thFItemL fl">
+            <img ng-src="{{x.picture.pic_cover}}"/>
+            <div class="myInex">
+              <img src="common/img/index/fullBg.png"/>
+              <p class="txt fontNum">0{{$index+1}}</p>
+            </div>
+          </div>
+          
+          <div class="thFItemR fl">
+            <p class="top">满{{x.ms_rule_price}}减{{x.ms_rule_discount}}</p>
+            <p class="desc txtellipsis2">{{x.goods_name}}</p>
+            <div class="bot clearfix">
+              <p class="fl fontRed fontNum price" > {{x.price | currency:'¥'}}</p>
+              <s class='fl fontGray fontNum oldPrice'>200</s>
+              <button class="fl mybtn btnRed">立即抢购</button>
+            </div>
+          </div>
+          
+        </li>
+      </ul>
+      
+    </div>
+    <!-- 活动专栏 -->
+    <div class="thScrollMod activeMod" ng-if="vm.data.advList.adv_act_list.adv_list.length > 0">
+      <div class="title clearfix">
+        <p class="fl name">活动专栏</p>
+      </div>
+      <div class="thScrollCon">
+        <ion-scroll class='actScrollList ' direction='x'>
+          <div class="actScrollItem " ng-class="{'actScrollItemFir':$first}" ng-repeat='x in vm.data.advList.adv_act_list.adv_list'>
+            <img class="img" style='width: {{vm.myScoItemW}};' ui-sref='goodsDetail({id: x.goodsid})' ng-src="{{x.adv_image}}" />
+          </div>
+        </ion-scroll>
+      </div>
+    </div>
+      
+    <!-- 商品分类_模块 -->
+    <div class="home-model" ng-repeat="group in vm.data.platformList">
+      <div class="tile clearfix">
+        <p class="fl name">{{group.group_name}}</p>
+        <!--<p class="fr more fontYellow" id='{{group.goods_list[0].category_id}}' ui-sref='goodsList({cid: group.goods_list[0].category_id})'>查看更多</p>--> 
+      </div>
+      <ul class="content clearfix">
+        <li class="hgoods fl" ng-repeat='goods in group.goods_list'  ui-sref='goodsDetail({id:goods.goods_id})'>
+          <img class="goodsImg" ng-src="{{goods.pic_cover_small || 'common/img/index/goods.jpg'}}" alt="" />
+          <p class="desc txtellipsis">{{goods.goods_name}}</p>
+          <div class="hgoodsBot">
+            <p class="money">¥{{goods.promotion_price}}
+              <s class="fontGray fontNum oldPrice">{{goods.price}}</s>
+            </p>
+            <p class="hgoodsNum">剩余{{goods.stock}}件</p>
+            <!--<p class="shopCar" ng-click="vm.addCart(goods)"></p>-->
+          </div>
+        </li>
+      </ul>
+    </div>
+    
+  </ion-content>
+</ion-view>

@@ -1,0 +1,39 @@
+<ion-view style='background: #fff;'>
+  <ion-header-bar class='myheader' align-title='center'>
+    <a class='back' class='center' ng-click="xgoBack('-1', false, $event);"></a>
+    <div class="myTitle">注册</div>
+  </ion-header-bar>
+  
+  <ion-content on-swipe-right="iosSwipe('-1', false, $event);">
+  	<!--<div class="lrTop">
+  		<img class="bg" src="common/img/login/login-top.jpg" alt="" />
+  		<div class="lrGoHome" ng-click="xgoBack(-1);"><img src="common/img/login/home_check.png"/></div>
+  	</div>-->
+  	
+  	<div class="lrSubWrap register">
+      <form>
+  		<ul class="lsList registerList">
+  			<li class="lsItem clearfix">
+  				<p class="fl name">账号</p>
+  				<input class="fl lrIpt" ng-model='vm.params.user' type="" autocomplete="on" name="username" value=""  placeholder="请输入账号"/>
+  			</li>
+  			
+  			<li class="lsItem clearfix">
+  				<p class="fl name">密码</p>
+  				<input class="fl lrIpt" ng-model='vm.params.pwd' autocomplete="off" type="password" name="pwd" value="" placeholder="请输入密码"/>
+  			</li>
+  			
+  			<li class="lsItem clearfix">
+  				<p class="fl name">确认密码</p>
+  				<input class="fl lrIpt" ng-model='vm.params.confirmPwd' autocomplete="off" type="password" name="confirmPwd" value="" placeholder="请输入密码"/>
+  			</li>
+  		</ul>
+  		</form>
+  		<div class="lrbtns">
+  			<button class="mybtn btnRed btnBig ltBtn"  ng-click='vm.register()'>免费注册</button>
+  			<p class="rToLogin" ui-sref='login'>已有账号，立即登录</p>
+  		</div>
+  	</div>
+  	
+  </ion-content>
+</ion-view>

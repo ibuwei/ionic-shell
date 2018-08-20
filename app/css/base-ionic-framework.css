@@ -1,0 +1,133 @@
+/**
+* Description: Base style for ionic V1
+* By: Shenqi
+**/
+
+
+ion-tabs.tabs-color-active-primary .tab-item {
+  color: #000; background: #fff;}
+ion-tabs.tabs-color-active-primary .tab-item.tab-item-active, ion-tabs.tabs-color-active-primary .tab-item.active, ion-tabs.tabs-color-active-primary .tab-item.activated {
+  color: #fd6f03; }
+ion-tabs.tabs-striped.tabs-color-active-primary .tab-item.tab-item-active, ion-tabs.tabs-striped.tabs-color-active-primary .tab-item.active, ion-tabs.tabs-striped.tabs-color-active-primary .tab-item.activated {
+  border-color: #ff385c;
+  color: #ff385c; }
+
+/*Popup*/
+.popup-container.popup-showing .popup{border-radius: 10px; background-color: #fff;}
+.popup-buttons .button{color: #1081ff;}
+.popup-title{font-weight: 500;}
+.popup-body{width: 100%; padding: 20px 10px;}/*min-height: 80px; */
+/*TODO 利用flex-box实现水平垂直居中内容*/
+/*.popup-container.popup-showing.flex-center .popup-body{ display: flex; display: -webkit-flex; justify-content: center; align-items: center;}*/
+
+/*all icons*/
+.icon, .tab-item .icon {display: inline-block; width: 36px; height: 36px; background-size: 100%; background-position: center; background-repeat: no-repeat; position: relative;}
+.icon.click:before, .tab-item .icon.click:before { position: absolute; top: -8px; right: -8px; bottom: -8px; left: -8px; z-index: 9; content: '';}
+/*tab-item icon*/
+.tab-item .icon {display: block; height: 32px; background-size: 24px; background-position: center; background-repeat: no-repeat;}
+.icon.icon-home { background-image: url(../common/img/icon/menu/home.png);}
+.icon.icon-category { background-image: url(../common/img/icon/menu/jiedai.png);}
+.icon.icon-cash { background-image: url(../common/img/icon/menu/cash.png);}
+.icon.icon-coin { background-image: url(../common/img/icon/menu/coin.png);}
+.icon.icon-coinAct { background-image: url(../common/img/icon/menu/coinAct.png);}
+.icon.icon-activity { background-image: url(../common/img/icon/menu/credit.png);}
+.icon.icon-cart { background-image: url(../common/img/icon/menu/credit.png);}
+.icon.icon-my { background-image: url(../common/img/icon/menu/my.png);}
+.icon.icon-home-active { background-image: url(../common/img/icon/menu/home-active.png);}
+.icon.icon-category-active { background-image: url(../common/img/icon/menu/jiedai-active.png);}
+.icon.icon-cash-active { background-image: url(../common/img/icon/menu/cash-active.png);}
+.icon.icon-activity-active { background-image: url(../common/img/icon/menu/credit-active.png);}
+.icon.icon-cart-active { background-image: url(../common/img/icon/menu/credit-active.png);}
+.icon.icon-my-active { background-image: url(../common/img/icon/menu/my-active.png);}
+
+.button {
+  border-color: transparent;
+  background-color: #fff;
+  color: #444;
+  min-height: 36px;
+  line-height: 36px; }
+.button.active, .button.activated {
+  border-color: transparent;
+  background-color: inherit; }
+
+.button.button-primary {
+  border-color: transparent;
+  background-color: #ff385c;
+  color: #fff; }
+.button.button-primary:hover {
+  color: #fff;
+  text-decoration: none; }
+.button.button-primary.active, .button.button-primary.activated {
+  border-color: transparent;
+  background-color: #ff385c; }
+.button.button-primary.button-clear {
+  border-color: transparent;
+  background: none;
+  box-shadow: none;
+  color: #ff385c; }
+.button.button-primary.button-icon {
+  border-color: transparent;
+  background: none; }
+.button.button-primary.button-outline {
+  border-color: #ff385c;
+  background: transparent;
+  color: #ff385c; }
+.button.button-primary.button-outline.active, .button.button-primary.button-outline.activated {
+  background-color: #ff385c;
+  box-shadow: none;
+  color: #fff; }
+
+
+.button.button-ochre {
+  border-color: transparent;
+  background-color: #fac572;
+  color: #fff; }
+.button.button-ochre:hover {
+  color: #fff;
+  text-decoration: none; }
+.button.button-ochre.active, .button.button-ochre.activated {
+  border-color: transparent;
+  background-color: #fac572; }
+.button.button-ochre.button-clear {
+  border-color: transparent;
+  background: none;
+  box-shadow: none;
+  color: #fac572; }
+.button.button-ochre.button-icon {
+  border-color: transparent;
+  background: none; }
+.button.button-ochre.button-outline {
+  border-color: #fac572;
+  background: transparent;
+  color: #fac572; }
+.button.button-ochre.button-outline.active, .button.button-ochre.button-outline.activated {
+  background-color: #fac572;
+  box-shadow: none;
+  color: #fff; }
+/*button-gray*/
+.button.button-gray {
+  border-color: transparent;
+  background-color: #d4d4d4;
+  color: #fff; }
+.button.button-gray:hover {
+  color: #fff;
+  text-decoration: none; }
+.button.button-gray.active, .button.button-gray.activated {
+  border-color: transparent;
+  background-color: #d4d4d4; }
+.button.button-gray.button-clear {
+  border-color: transparent;
+  background: none;
+  box-shadow: none;
+  color: #d4d4d4; }
+.button.button-gray.button-icon {
+  border-color: transparent;
+  background: none; }
+.button.button-gray.button-outline {
+  border-color: #d4d4d4;
+  background: transparent;
+  color: #d4d4d4; }
+.button.button-gray.button-outline.active, .button.button-gray.button-outline.activated {
+  background-color: #d4d4d4;
+  box-shadow: none;
+  color: #fff; }

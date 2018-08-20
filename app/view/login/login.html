@@ -1,0 +1,28 @@
+<ion-view style='background: #fff;'>
+  <ion-header-bar class='myheader' align-title='center'>
+    <a class='back' class='center' ng-click="xgoBack('-1', false, $event);"></a>
+    <div class="myTitle">登录</div>
+  </ion-header-bar>
+  <ion-content on-swipe-right="iosSwipe('-1', false, $event);">
+    <!--<div class="lrTop">
+      <img class="bg" src="common/img/login/login-top.jpg" alt="" />
+      <div class="lrGoHome" ng-click="xgoBack(-1);"><img src="common/img/login/home_check.png"/></div>
+    </div>-->
+    <div class="lrSubWrap">
+      <ul class="lsList">
+        <li class="lsItem clearfix">
+          <img class="fl lricon" src="common/img/login/username.png" alt="" />
+          <input class="fl lrIpt" ng-model="vm.params.user" type="text" autocapitalize="off" autocomplete="on" placeholder="请输入账号" />
+        </li>
+        <li class="lsItem clearfix">
+          <img class="fl lricon" src="common/img/login/password.png" alt="" />
+          <input class="fl lrIpt" ng-model='vm.params.pwd' type="password" autocomplete="off" value="" placeholder="请输入密码" />
+        </li>
+      </ul>
+      <div class="lrbtns">
+        <button class="mybtn btnRed btnBig ltBtn" ng-click='vm.login()'>登录</button>
+        <button class="mybtn btnWhite btnBig ltBtn" ui-sref='register'>立即注册</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

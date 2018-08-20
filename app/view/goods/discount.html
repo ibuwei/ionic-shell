@@ -1,0 +1,31 @@
+<ion-view>
+  <ion-header-bar class='myheader' align-title='center'>
+    <a class='back' class='center' ng-click="xgoBack('-1', false, $event);"></a>
+    <div class="myTitle">限时折扣</div>
+  </ion-header-bar>
+  <ion-content on-swipe-right="iosSwipe('-1', false, $event);">
+  	<ion-refresher pulling-text="下拉刷新" on-refresh="vm.doRefresh()"></ion-refresher>
+		<ul class="glList content clearfix">
+			<li class="hgoods fl" ui-sref = 'goodsDetail({id:item.goods_id})' ng-repeat='item in vm.page.data'>
+				<div class="goodsImgWrap">
+				  <img class="goodsImg" ng-src="{{item.pic_cover_small || 'common/img/index/goods.jpg'}}" alt="" />
+				  <div class="dcTimer">{{item.timer | date:'yyyy-MM-dd hh:mm:ss'}}</div>
+				</div>
+				  
+				<p class="desc txtellipsis" style="font-size: 13px;">{{$index+1}},id:{{item.goods_id}}: {{item.goods_name}}</p>
+				<div class="hgoodsBot clearfix">
+					<p class="fl money fontRed" style="font-size: 13px;">¥{{item.promotion_price|currency:''}}</p>
+				</div>
+				<div class="hgoodsBot clearfix">
+					<p class="fl fontGray" style="font-size: 12px;">销量:{{item.sales}}</p>
+					<!--<p class="fr shopCar"></p>-->
+				</div>
+			</li>			
+		</ul>
+		<p  class='noData' ng-if='vm.page.noDate'>没有数据</p>
+		<p class="noMoreData" ng-show='!vm.page.hasmore && !vm.page.noDate'>无更多数据</p>
+		<ion-infinite-scroll ng-if="vm.page.hasmore" on-infinite="vm.loadMore()"></ion-infinite-scroll>
+  </ion-content>
+  
+  
+</ion-view>	

@@ -1,0 +1,24 @@
+<ion-view >
+  <ion-header-bar class='myheader' align-title='center'>
+    <a class='back' class='center' ng-click="xgoBack('-1', false, $event);"></a>
+    <div class="myTitle">我的物流</div>
+  </ion-header-bar>
+  <ion-content on-swipe-right="iosSwipe('-1', false, $event);">
+    <div class="eTop">
+      <p class="eitem">共{{vm.data.expressInfo.order_goods_list.length}}个商品，由{{vm.data.expressInfo.express_name}}承运</p>
+      <p class="eitem">运单编号: {{vm.data.expressInfo.express_code}}</p>
+    </div>
+    
+    <ul class="epList"> 
+      <li class="tit fontRed">物流跟踪</li>
+      <li class="epitem" ng-class='{"epitemFir": $first}' ng-repeat='x in vm.data.expressList.Traces'>
+        <div class="top">{{x.AcceptStation}} </div>
+        <p class="etime">{{x.AcceptTime}} </p>
+        <div class="epCircle " ng-class="{'epCircleFir':$first}"></div>
+      </li>
+    </ul>
+    
+  	
+    
+  </ion-content>
+</ion-view>

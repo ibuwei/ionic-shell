@@ -1,0 +1,26 @@
+version: '2.1'
+services:
+  ionicshell:
+    #images: registry.cn-hangzhou.aliyuncs.com/narlian/node-npm:2.15.5
+    build: .
+    ports:
+      - 8100:8100
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - node_modules:/app/node_modules
+      - bower_components:/app/app/res/lib
+    restart: always
+    command: /bin/sh ./run.sh
+    stdin_open: true
+    tty: true
+volumes:
+  node_modules:
+    external: true
+  bower_components:
+    external: true
+# networks:
+#   default:
+#     external:
+#       name: proxynet

@@ -1,0 +1,63 @@
+<ion-view >
+  <ion-header-bar class='myheader' align-title='center'>
+    <a class='back' class='center' ng-click="xgoBack('-1', false, $event);"></a>
+    <div class="myTitle">我的订单</div>
+  </ion-header-bar>
+  
+  <ul class="olTabs clearfix" >
+  	<li class="olTab" ng-click="vm.tabChange('all')" ng-class="{'olTabAct':vm.tabId == 'all'}">全部</li>
+		<!--<li class="olTab" ng-click="vm.tabChange(0)" ng-class="{'olTabAct':vm.tabId == '0'}">待付款</li>-->
+		<li class="olTab" ng-click="vm.tabChange(1)" ng-class="{'olTabAct':vm.tabId == '1'}">待发货</li>
+		<li class="olTab" ng-click="vm.tabChange(2)" ng-class="{'olTabAct':vm.tabId == '2'}">待收货</li>
+		<li class="olTab" ng-click="vm.tabChange(3)" ng-class="{'olTabAct':vm.tabId == '3'}">已收货</li>
+	</ul>
+  
+  <ion-content style='top:85px' on-swipe-right="iosSwipe('-1', false, $event);">
+  	<ion-refresher on-refresh="vm.refresh()"></ion-refresher>
+  	
+  	<div class="olList">
+  		
+  		<div class="olItem" ng-repeat='x in vm.page.data' >
+  			<div class="olItemTop clearfix fontNum" >
+  				<p class="fl num">{{x.order_no}}</p>
+  				<p class="fr time fontGray">{{x.create_time*1000 | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+  			</div>
+  			<div class="olGoodsList" ui-sref='orderDetail({id:x.order_id})'>
+  				<div class="olGoodsItem clearfix" ng-repeat='y in x.order_item_list'>
+  					<div class="img fl" >
+  						<img ng-src="{{y.picture.pic_cover_small}}"/>
+  					</div>
+  					<div class="info fl">
+  						<div class="name txtellipsis2">{{y.goods_name}}</div>
+  						<p class="money fontNum fontRed">¥ {{y.goods_money}}</p>
+  						<p class="guige clearfix">
+  							<span class="fl">规格：{{y.sku_name}}</span>
+  							<span class="fr fontNum fontGray">x{{y.num}}</span>
+  						</p>
+  					</div>
+  				</div>				
+  			</div>	
+  			<div class="olItemBot clearfix">
+  				<div class="status fl ">{{x.status_name}}</div>
+  				<p class="allmoney fr">总价 <span class="fontNum fontRed" >¥{{x.order_money}}</span></p>
+  			</div>
+  			<div class="delWrap clearfix">
+  			  <button class="mybtn btnRed" ng-click='vm.getdelivery(x.order_id, $index)' ng-if="x.status_name == '已发货' ">确认收货</button>
+  			  <button class="mybtn btnRed" ui-sref='evaluate({id: x.order_id})' ng-if="x.status_name == '已收货' && x.is_evaluate == 0 ">我要评价</button>
+  			  <button class="mybtn btnRed" ui-sref='evaluateAgain({id: x.order_id})' ng-if="x.status_name == '已收货' && x.is_evaluate == 1 ">追加评价</button>
+  			  <button class="mybtn "  ui-sref='express({id: x.order_id})' ng-if="x.status_name == '已发货' || x.status_name == '已收货' ">查看物流</button>
+  				<button class="mybtn btnRed" ng-click='vm.delOrder(x.order_id, $index)' ng-if="x.status_name == '已关闭' ">删除订单</button>
+  			</div>
+  		</div>
+  	</div>  
+  	
+  	<p  class='olNodata' ng-if='vm.page.noDate'>
+  	  <img src="common/img/icon/distribution.png" alt="" />
+  	     您还没有相关的订单
+  	</p>
+    <p class="noMoreData" ng-show='!vm.page.hasmore && !vm.page.noDate'>无更多数据</p>
+
+    <ion-infinite-scroll  ng-if="vm.page.hasmore"  on-infinite="vm.loadMore()"></ion-infinite-scroll>
+  </ion-content>
+  
+</ion-view>

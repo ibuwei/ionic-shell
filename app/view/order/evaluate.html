@@ -1,0 +1,66 @@
+<ion-view >
+  <ion-header-bar class='myheader' align-title='center'>
+    <a class='back' class='center' ng-click="xgoBack('-1', false, $event);"></a>
+    <div class="myTitle">我要评价</div>
+  </ion-header-bar>
+  <ion-content on-swipe-right="iosSwipe('-1', false, $event);">
+    <ul class="eGoodsList">
+    	<li class="egItem clearfix" ng-repeat='x in vm.data.init.list' >
+    	  <div class="egItemTop clearfix">
+    	    <div class="imgWrap fl">
+    	      <img class="img " src="common/img/test/goods.jpg" />
+    	    </div>
+          <div class="fr egiLeaveWord">
+            <textarea name="" rows="" cols="" placeholder="请输入要评价的内容，不要超过150个字符。。" ng-model='x.content'></textarea>
+          </div>
+    	  </div>
+    	  
+    	  <div class="egUpImgsWrap clearfix">
+    	    <div class="imgWrap fl" ng-repeat='y in x.imgs'>
+    	      <span class="close" ng-click="vm.delImg(x, $index)">x</span>
+    	      <p class="img" style='height: {{vm.egUpBtnH}};background: url({{y}}) no-repeat center;background-size: 100%;' ></p>
+    	    </div>
+    	    
+    	    <div class="egUpBtn fl"  ng-model="selImgs" ngf-select="vm.selected($files, x)" ngf-pattern="'image/*'" ngf-multiple="false" style='height: {{vm.egUpBtnH}};' ng-if="x.imgs.length < 5">
+    	      <img src="common/img/order/photo.png"/>
+    	      <p class="txt">
+    	        <span ng-if="x.imgs.length <= 0">添加图片</span>
+    	        <span ng-if="x.imgs.length > 0">{{x.imgs.length}}/5</span>
+    	      </p>
+    	    </div>
+    	  </div>
+    	</li>
+    </ul>
+    
+    <div class="eShopScoreWrap">
+      <div class="essTop clearfix">
+        <div class="fl clearfix">
+          <img class="fl" src="common/img/order/shop.png" alt="" />
+          <p class="fl">店铺评分</p>
+        </div>
+        <p class="fr" style="color: #A9A9A9;">满意请给5分哦</p>
+      </div>
+      
+      <div class="essBot clearfix">
+        <p class="fl">宝贝与描述相符：</p>
+        <ul class="fr ul essStarts">
+          <li class="fl essStart" ng-class="{'essStartAct': vm.data.scores > 0}" ng-click="vm.data.scores = 1"></li>
+          <li class="fl essStart" ng-class="{'essStartAct': vm.data.scores > 1}" ng-click="vm.data.scores = 2"></li>
+          <li class="fl essStart" ng-class="{'essStartAct': vm.data.scores > 2}" ng-click="vm.data.scores = 3"></li>
+          <li class="fl essStart" ng-class="{'essStartAct': vm.data.scores > 3}" ng-click="vm.data.scores = 4"></li>
+          <li class="fl essStart" ng-class="{'essStartAct': vm.data.scores > 4}" ng-click="vm.data.scores = 5"></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="eFoot clearfix">
+      <div class="fl eFootFl clearfix">
+        <p class="fl circle" ng-click='vm.data.is_anonymous ==1 ? vm.data.is_anonymous =0 : vm.data.is_anonymous =1'>
+          <img ng-if="vm.data.is_anonymous == 1" src="common/img/commonImg/gou.png"/>
+        </p>       
+        <p class="fl">匿名评论</p>
+      </div>
+      <button class="fr mybtn btnRed" ng-click='vm.next()'>发表评论</button>
+    </div>
+  </ion-content>
+</ion-view>

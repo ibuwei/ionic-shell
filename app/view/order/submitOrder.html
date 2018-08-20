@@ -1,0 +1,72 @@
+<ion-view >
+  <ion-header-bar class='myheader' align-title='center'>
+    <a class='back' class='center' ng-click="xgoBack('-1', false, $event);"></a>
+    <div class="myTitle">订单结算</div>
+  </ion-header-bar>
+  <ion-content on-swipe-right="iosSwipe('-1', false, $event);">
+    <div class="soAddInfo" ui-sref='addressList({"from":"submitOrder"})'>
+    	<div class="icon">
+    		<img src="common/img/icon/address.png"/>
+    	</div>
+    	<div class="top clearfix">
+    		<p class="fl">收货人信息：{{vm.pageInfo.address_default.consigner}}</p>
+    		<p class="fr">{{vm.pageInfo.address_default.mobile}}</p>
+    	</div>
+    	<p class="bot">收货地址：<span ng-bind-html='vm.pageInfo.address_default.address_info'></span>&nbsp;{{vm.pageInfo.address_default.address}} </p>
+    </div>
+    
+    <div class="soGoods">
+    	<dl class="soGoodRow clearfix" ng-repeat='x in vm.pageInfo.itemlist'>
+    		<dt class="img fl">
+    			<img ng-src="{{x.picture_info.pic_cover_small}}" alt="" />
+    		</dt>
+    		<dd class="info fl ">
+    			<div class="top txtellipsis2">{{x.goods_name}}</div>
+    			<div class="middle">{{x.sku_name}}</div>
+    			<div class="bot clearfix">
+    				<p class="fl money fontRed">¥{{x.price}} 
+    				  <span ng-if='x.price > 0 && vm.pageInfo.count_point_exchange > 0'>+</span>
+    				  <span ng-if='vm.pageInfo.count_point_exchange > 0'>{{vm.pageInfo.count_point_exchange}}积分</span>
+    				</p>
+    				<p class="fr num">x{{x.num}}</p>
+    			</div>
+    		</dd>
+    	</dl>
+    </div>
+    
+    <div class="soRow clearfix">
+    	<p class="fl name">现有积分</p>
+    	<p class="fr right fontRed">{{vm.pageInfo.member_account.point}}</p>
+    </div>
+    <div class="soRow clearfix">
+    	<p class="fl name">买家留言</p>
+    	<p class="fr right">
+    		<input class="ipt" type="" name="" id="" ng-model='vm.leavemessage' value="" placeholder="给卖家留言"/>
+    	</p>
+    </div>
+    
+    <div class="soMoneys">
+    	<div class="soRow top clearfix">
+	    	<p class="fl name" >结算信息</p>
+	    	<p class="fr right"></p>
+	    </div>
+	    
+	    <div class="soRow clearfix">
+	    	<p class="fl name">共<span class='fontRed'>{{vm.pageInfo.itemlist.length}}</span>种商品 总计</p>
+	    	<p class="fr right">¥{{vm.pageInfo.count_money}}</p>
+	    </div>
+	    
+	    <div class="soRow clearfix">
+	    	<p class="fl name">总优惠</p>
+	    	<p class="fr right">¥{{vm.pageInfo.discount_money}}</p>
+	    </div>
+    </div>
+    
+  </ion-content>
+  
+  <ion-footer-bar class='ionicFootWrap clearfix '>
+	  <div class="sofFl  fl">应付金额：<span class="fontRed fontNum">{{vm.pageInfo.count_money-vm.pageInfo.discount_money | currency:'¥'}}</span></div>
+	  <div class="btnRed fl soNextBtn" ng-click='vm.createOrder()'>提交订单</div>
+	</ion-footer-bar>
+  
+</ion-view>

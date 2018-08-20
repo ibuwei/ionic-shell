@@ -1,0 +1,397 @@
+@charset "utf-8";
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend{ margin:0; padding:0; } 
+fieldset, img { border:none; } 
+img{display: block;} 
+address, caption, cite, code, dfn, th, var { font-style:normal; font-weight:normal; } 
+ul,ol,li { list-style:none; } 
+body { font-size :14px;font-family: '微软雅黑',Arial;color:#333; background:#fff; }
+a {color: #000;text-decoration:none ;display:inline-block;}
+textarea{resize: none;outline: none;}
+dl,dl dt{font-weight: 500;}
+p{padding: 0;margin: 0;}
+input{padding: 0;}
+button{border: none;padding: 0;font-family: "微软雅黑","Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;}
+
+/*修改ionic样式*/
+.pane, .view{background: #F6F7F9;}
+.ionicHeader{z-index: 10000;position: absolute;width:100%;height:44px;padding:0;background: #fff;color: #333;box-shadow: 0px 2px 3px rgba(84,84,84,.2);}
+.ionicBack{position: absolute;width: 44px;height: 44px;bottom:0;z-index: 10;background: url(../common/img/commonImg/back.png) no-repeat center;background-size: 18px;}
+.ionicTitle{position: absolute;width:100%;height: 44px;line-height: 44px;left: 0;bottom: 0;z-index: 0; text-align: center;font-size:17px ;color: #333;font-family: "微软雅黑";}
+.headerRight{position: absolute;width: auto;height: 44px;line-height: 44px;right: 0;bottom: 0;padding:0 15px;font-size:14px;z-index: 10;}
+.ionicFootWrap{padding: 0;background: #fff;}
+.ionCont0{top:0}
+/*.platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader){
+  margin: 0px!important;
+  height: 44px!important;
+}*/
+/*修改ionic样式--end */
+
+/* 常用样式 */
+.fl{float: left;}
+.fr{float: right;}
+.floatL{float: left;}
+.floatR{float: right;}
+.popWrap{position: fixed;width: 100%;height: 100%;left: 0;top:0;background: rgba(0, 0, 0, .6);z-index: 100000;}
+/* 更多箭头-行（i.class） */
+.imgMore{position: absolute;width:7px ;height: 19px;right: 14px;top:50%;margin-top: -10px;background: url(../common/img/commonImg/imgMore.png) no-repeat center;background-size:100% ;}
+
+/* 重要组件的颜色 */
+.mybtn{display: block;padding: 0;margin: 0;border: none;font-family: "微软雅黑";font-size: 14px;letter-spacing: 2px;}
+
+
+/* 背景色 */
+.grayBg{background:#F6F7F9;} 
+	
+/* 字体 */
+.fontNum{font-family: arial;}
+.txtellipsis{overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}/*显示省略号*/
+.txtellipsis2{word-break: break-all;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;}
+
+/*ui-线条标准
+ * 分割线    f0f0f0
+ * 块与块之间的间隔 灰色背景   4px  f2f2f2
+ * */
+.floatL{float: left;}
+.floatR{float: right;}
+
+/* 重要组件的颜色 */
+.btnBig{display: block; width: 92%;height: 40px; margin: 0 auto; border:none;  border-radius: 4px;}
+.btnRed{ background: #FF4E00;color: #FFF;font-size: 14px;} 
+/*F15353*/
+.btnWhite{background: #fff;border:1px solid #FF4E00;color: #FF4E00;}
+/* 纯黄色背景 */
+.bgYellow{  background: #fd6f03;}
+
+/* 黄色字体 */
+.fontYellow{color:#fd6f03!important ;}
+.fontRed{color: #e30214!important;}
+.fontGray{color: #999!important;}
+/* 重要组件的颜色 */
+
+/* 轮播图样式重置 */
+.slider-pager{bottom: 10px;}
+.ion-record{font-size: 60%;}
+
+/* 轮播图样式重置-end */
+
+/*固定提示框*/
+.infoTxt{width:100%;height: auto;font-size: 14px;line-height: 20px;color: red;text-align: center;
+  /*background: pink;*/
+}
+
+/*固定提示框*/
+
+/*修改系统头部和内容区的样式*/
+/*.has-header{
+    top: 44px;
+}*/
+/*.ionicHeader{z-index: 10000;position: absolute;width:100%;height:44px;padding:0;background: #fff;color: #333;}*/
+.myheader{z-index: 10000;position: absolute;width:100%;height:44px;padding:0;background: #fff;color: #333;box-shadow: 0px 2px 3px rgba(84,84,84,.2);}
+.myTitle{
+  width:100%;
+  height: 44px;
+  line-height: 44px;
+  position: absolute;
+  left: 0;
+  z-index: 0;   
+  text-align: center; 
+  font-size:18px ;
+  font-weight:500;
+  color: #333;
+  font-family: '黑体';
+  
+}
+.back{position: absolute;width: 44px;height: 44px;bottom:0;z-index: 10;background: url(../common/img/commonImg/back.png) no-repeat center;background-size: 18px;}
+.backPic {
+	display: none;
+  width: 9px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  margin-top: -8px;
+  left:50%;
+  margin-left: -4px;
+}
+
+/*修改系统头部和内容区的样式*/
+.ahref{
+  width: 200px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  background: greenyellow;
+  margin: 30px auto;
+}
+
+/*tost*/
+.tost{
+  display: none;
+  position: fixed;
+  width: auto;
+  height: auto;
+  padding: 12px 20px;
+  background: rgba(0,0,0,.7);
+  border-radius:4px ;
+  color: #fff;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  margin-top:-44px ;
+}
+/*tost-end*/
+
+/* 加载页面 */
+.loadingWrap{
+  position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0);
+    /*background: greenyellow;*/
+    left:0;
+    top:0;
+    z-index: 1000;
+}
+.myLoading{
+  position: absolute;
+    width: 80px;
+    height: 80px;
+    background: rgba(0,0,0,.5);
+    left: 50%;
+    margin-left: -40px;
+    border-radius: 8px;
+    padding-top: 6px;
+    top: 50%;
+    margin-top: -80px;
+}
+.loadingContent{
+  position: absolute;
+  width: 100%;
+  height: 74px;
+  top:50%;
+  /*background: pink;*/
+  margin-top: -35px;
+  
+}
+.myLoading img{
+  display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    margin-bottom: 6px;
+}
+.loadingContent .txt{
+  width: 100%;
+  height: auto;
+  font-family: "微软雅黑";
+  font-size: 14px;
+  color:#fff;
+  /*background: greenyellow;*/
+  text-align: center;
+}
+/* 加载页面--end */
+
+/* 无网页面 */
+.noNetwork{
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 200;
+  /*background: yellow;*/
+  left: 0;
+  top: 0;
+}
+.noNetworkIn{
+  position: absolute;
+  width: 100%;
+  height: auto;
+  left:0;
+  top:50%;
+  margin-top: -130px;
+  /*background: greenyellow;*/
+  /*background: pink;*/
+}
+.noNetworkPic{
+  display: block;
+  width:130px ;
+  height: 106px;
+  margin:0 auto;
+  margin-bottom:18px ;
+  
+}
+.noNetworkTxt{
+  width: 100%;
+  line-height: 16px;
+  font-size:14px;
+  color:#6e6e6e;
+  text-align: center;
+  margin-bottom: 20px;
+  /*background: yellow;*/
+}
+.noNetReloadBtn{
+  display: block;
+  width: 90px;
+  height: 30px;
+  margin: 0 auto;
+  background: #fff;
+  color:#6e6e6e;
+  border:1px solid #6e6e6e;
+  border-radius: 2px;
+  
+}
+/* 无网页面--end */
+
+/*验证码模块*/
+.IDCode{
+  position: absolute;
+  width: 90px;
+  height: 40px;
+  font-size: 14px;
+  background: #efefef;
+  color:#b8b8b8;
+  border:none;
+  border-radius: 4px;
+  right: 15px;
+  top:50%;
+  margin-top:-20px;
+}
+.IDCodeAct{
+  background: #f46660;
+  color:#fff;
+}
+/*验证码模块*/
+
+/*icon小图标20*20*/
+.icon20 {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  color: #999;
+  /*background-color: #FF8E1C;*/
+  text-align: center;
+  line-height: 20px;
+  top: 50%;
+  margin-top: -10px;
+  right: 15px;
+  font-size: 16px;
+}
+/*icon小图标20*20--end*/
+
+/*银行卡-统一样式*/
+.banksWrap{
+  width: 100%;
+  height: auto;
+  padding: 10px 15px;
+  /*background: greenyellow;*/
+}
+.addBank{
+  display: block;
+  width: 100%;
+  height: 90px;
+  text-align: center;
+  border-radius: 4px;
+  border:1px dashed #d0d0d0;
+  color: #999;
+  font-size: 16px;
+  background: #fff;
+  padding-top: 35px;
+}
+.addBankTxt{
+  width: 106px;
+  height: 20px;
+  margin: 0 auto;
+}
+.addBankTxt i{
+  float: left;
+  width: 20px;
+  height: 20px;
+  /*background: pink;*/
+  font-size: 16px;
+  color: #999;
+  line-height: 20px;
+  font-weight: 600;
+}
+.addBankTxt span{
+  float: left;
+  width: auto;
+  height: 20px;
+  /*background: blue;*/
+  font-size: 16px;
+  color: #999;
+  line-height: 20px;
+  
+}
+
+.bankCardsWrap{
+  width: 100%;
+  height: auto;
+}
+.bankCardWrap{
+  width: 100%;
+  height: 90px;
+  background: #fff;
+  border-radius: 4px;
+}
+.bankCardWrap .left{
+  float: left;
+  width: 23%;
+  height: 90px;
+  /*background: pink;*/
+  padding-top: 20px;
+}
+.bankCardWrap .left .bankLogo{
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.bankCardWrap .left img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  /*background: blue;*/
+  border-radius: 50%;
+  border:none;
+  
+}
+.bankCardWrap .right{
+  float: left;
+  width: 77%;
+  height: 90px;
+  /*background: yellow;*/
+  padding-top:20px;
+  color: #434343;
+  
+}
+.bankCardWrap .right .top{
+  font-size: 16px;
+  line-height: 24px;
+  /*background: pink;*/
+  margin-bottom: 8px;
+}
+.bankCardWrap .right .bot{
+  font-size: 18px;
+  line-height: 20px;
+  /*background: pink;*/
+}
+
+/* 请求超时后显示的内容样式 */
+.toastWrap{z-index:200;position:absolute;width:76%;left:50%;margin-left:-38%;color:#fff;height:auto;display:none;text-align:center}
+.toastWrap span{-webkit-box-flex:0;-webkit-flex:0 0 auto;-moz-box-flex:0;-moz-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;border-radius:5px;opacity:.8;filter:alpha(opacity=80);background-color:#000;margin:0 auto;font-size:14px;padding:10px;display:inline-block}
+.toastWrap.bottom{position:fixed!important;bottom:0!important}
+/*银行卡-统一样式--end*/
+
+.popup-title{font-weight: 600; color: #020202;}
+.popup-color {color: #ff385c;padding-bottom: 0px;}
+
+/* 分页页面 ：暂无数据，无更多数据 */
+.noData,.noMoreData{
+  width: 100%;
+  line-height: 40px;
+  text-align: center;
+}
+
+

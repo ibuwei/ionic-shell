@@ -1,0 +1,29 @@
+<ion-view >
+  <ion-header-bar class='myheader' align-title='center'>
+    <a class='back' class='center' ng-click="xgoBack('-1', false, $event);"></a>
+    <div class="myTitle">个人信息</div>
+  </ion-header-bar>
+  <ion-content on-swipe-right="iosSwipe('-1', false, $event);">
+    <div class="myInfoWrap">
+    	<div class="myInfo">
+        <div class="infoLeft">账号</div>
+        <div class="infoRight">{{vm.data.userInfo.member_name}}</div>
+      </div>
+      <div class="myInfo">
+        <div class="infoLeft">昵称</div>
+        <div class="infoRight">{{vm.data.userInfo.user_info.real_name || vm.data.userInfo.member_name}}</div>
+      </div>
+      <div class="myInfo">
+        <div class="infoLeft">密码</div>
+        <div class="infoRight fontYellow" style='padding-right: 10px;' ui-sref='modifyPsd'>修改 <i class="imgMore"></i></div>
+      </div>
+      <div class="myInfo">
+        <div class="infoLeft">等级</div>
+        <div class="infoRight">{{vm.data.userInfo.level_name}}</div>
+      </div>
+
+    </div>
+    <br>
+    <button class="btnBig btnRed nextBtn" ng-click='vm.logout()'>退出</button>
+  </ion-content>
+</ion-view>

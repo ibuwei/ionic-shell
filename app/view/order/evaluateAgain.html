@@ -1,0 +1,45 @@
+<ion-view >
+  <ion-header-bar class='myheader' align-title='center'>
+    <a class='back' class='center' ng-click="xgoBack('-1', false, $event);"></a>
+    <div class="myTitle">追加评价</div>
+  </ion-header-bar>
+  <ion-content on-swipe-right="iosSwipe('-1', false, $event);">
+    <ul class="eGoodsList">
+    	<li class="egItem clearfix" ng-repeat='x in vm.data.init.list' >
+    	  <div class="egItemTop clearfix" style="margin-bottom: 3px;">
+    	    <div class="imgWrap fl">
+    	      <img class="img " src="common/img/test/goods.jpg" />
+    	    </div>
+          <div class="fr egiLeaveWord">
+            <p class="txt txt1 txtellipsis2">{{x.goods_name}}</p>
+            <p class="txt txt2">{{x.sku_name}}</p>
+          </div>
+    	  </div>
+    	  
+    	  <div class="eaTxtWrap">
+          <p class="tit">追加评论</p>    	
+          <textarea name="" rows="" cols="" placeholder="请输入要评价的内容，不要超过150个字符。。" ng-model='x.content'></textarea>
+    	  </div>
+    	  
+    	  <div class="egUpImgsWrap clearfix">
+    	    <div class="imgWrap fl" ng-repeat='y in x.imgs'>
+    	      <span class="close" ng-click="vm.delImg(x, $index)">x</span>
+    	      <p class="img" style='height: {{vm.egUpBtnH}};background: url({{y}}) no-repeat center;background-size: 100%;' ></p>
+    	    </div>
+    	    
+    	    <div class="egUpBtn fl"  ng-model="selImgs" ngf-select="vm.selected($files, x)" ngf-pattern="'image/*'" ngf-multiple="false" style='height: {{vm.egUpBtnH}};' ng-if="x.imgs.length < 5">
+    	      <img src="common/img/order/photo.png"/>
+    	      <p class="txt">
+    	        <span ng-if="x.imgs.length <= 0">添加图片</span>
+    	        <span ng-if="x.imgs.length > 0">{{x.imgs.length}}/5</span>
+    	      </p>
+    	    </div>
+    	  </div>
+    	</li>
+    </ul>
+    
+    <div class="eFoot clearfix">
+      <button class="fr mybtn btnRed" ng-click='vm.next()'>发表评论</button>
+    </div>
+  </ion-content>
+</ion-view>
